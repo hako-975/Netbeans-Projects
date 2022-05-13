@@ -39,11 +39,9 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         TxtNamaBarang = new javax.swing.JTextField();
-        TxtHargaBeli = new javax.swing.JTextField();
         TxtHargaJual = new javax.swing.JTextField();
         TxtStok = new javax.swing.JTextField();
         TxtKodeBarang = new javax.swing.JTextField();
@@ -63,8 +61,6 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
         jLabel2.setText("Kode Barang");
 
         jLabel3.setText("Nama Barang");
-
-        jLabel4.setText("Harga Beli");
 
         jLabel5.setText("Harga Jual");
 
@@ -122,12 +118,10 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel4)
                                 .addComponent(jLabel5)
                                 .addComponent(jLabel6))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(TxtHargaBeli, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(TxtHargaJual, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(TxtStok, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -162,26 +156,24 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
                     .addComponent(jLabel3)
                     .addComponent(TxtNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jLabel4)
-                    .addComponent(TxtHargaBeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel5))
-                    .addComponent(TxtHargaJual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addComponent(jLabel5))
+                            .addComponent(TxtHargaJual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(9, 9, 9)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TxtStok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))))
-                .addGap(0, 64, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton5)
+                .addGap(0, 67, Short.MAX_VALUE))
         );
 
         TblBarang.setModel(new javax.swing.table.DefaultTableModel(
@@ -238,7 +230,6 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         String kodebarang=this.TxtKodeBarang.getText();
         String namabarang=this.TxtNamaBarang.getText();
-        String hargabeli=this.TxtHargaBeli.getText();
         String hargajual=this.TxtHargaJual.getText();
         String stokbarang=this.TxtStok.getText();
         if(TxtKodeBarang.getText().isEmpty()) 
@@ -248,11 +239,6 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
             if (TxtNamaBarang.getText().isEmpty())
             {
                 JOptionPane.showMessageDialog(this, "Data Belum Lengkap, Nama Barang Tidak Boleh Kosong");
-            }
-            else{
-            if (TxtHargaBeli.getText().isEmpty())
-            {
-                JOptionPane.showMessageDialog(this, "Data Belum Lengkap, Harga Beli Tidak Boleh Kosong");
             }
             else{
             if (TxtHargaJual.getText().isEmpty())
@@ -266,9 +252,9 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
                     PreparedStatement p=(PreparedStatement) c.prepareStatement(sql);
                     p.setString(1, kodebarang);
                     p.setString(2, namabarang);  
-                    p.setString(3, hargabeli);
-                    p.setString(4, hargajual);
-                    p.setString(5, stokbarang);
+                    p.setString(3, hargajual);
+                    p.setString(4, stokbarang);
+                    p.setString(5, Integer.toString(0));
                     p.executeUpdate();
                     p.close();
                     JOptionPane.showMessageDialog(this, "Sukses Tambah Data");
@@ -277,12 +263,12 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
                 }catch(SQLException e){
                     System.out.println(e);
                 }finally{       
-            }}}}}
+            }}}}
               try {        
 
                     Connection c=ClassDatabase.getkoneksi();
                     Statement s= c.createStatement();
-                    String sql="select kodebar, namabar, hargabeli, hargajual, stok from barang";
+                    String sql="select * from barang";
                     ResultSet r=s.executeQuery(sql);
                     TblBarang.setModel(DbUtils.resultSetToTableModel(r));
         }catch (Exception e){
@@ -295,7 +281,6 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         TxtKodeBarang.setText("");
         TxtNamaBarang.setText("");
-        TxtHargaBeli.setText("");
         TxtHargaJual.setText("");
         TxtStok.setText("");
         TxtKodeBarang.requestFocus();
@@ -309,8 +294,7 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
             String sql="Select * from barang where kodebar='" + this.TxtKodeBarang.getText() + "'";
             ResultSet r=s.executeQuery(sql);
            while (r.next()){
-                this.TxtNamaBarang.setText(r.getString(2));              
-                this.TxtHargaBeli.setText(r.getString("hargabeli"));
+                this.TxtNamaBarang.setText(r.getString("namabar"));              
                 this.TxtHargaJual.setText(r.getString("hargajual")); 
                 this.TxtStok.setText(r.getString("stok")); 
             }
@@ -324,11 +308,9 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_TxtKodeBarangCaretUpdate
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        
+    // TODO add your handling code here:
     String kodebar=this.TxtKodeBarang.getText();
     String namabar=this.TxtNamaBarang.getText();
-    String hargabeli=this.TxtHargaBeli.getText();
     String hargajual=this.TxtHargaJual.getText();
     String stok=this.TxtStok.getText();
      if(TxtKodeBarang.getText().isEmpty()) 
@@ -341,11 +323,6 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
         JOptionPane.showMessageDialog(this, "Data Belum Lengkap, Nama Barang Tidak Boleh Kosong");
     }
     else{
-    if (TxtHargaBeli.getText().isEmpty())
-    {
-        JOptionPane.showMessageDialog(this, "Data Belum Lengkap, Harga Beli Tidak Boleh Kosong");
-    }
-    else{
     if (TxtHargaJual.getText().isEmpty())
     {
         JOptionPane.showMessageDialog(this, "Data Belum Lengkap, Harga Jual Tidak Boleh Kosong");
@@ -353,29 +330,27 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
     else{
     try {
             Connection c=ClassDatabase.getkoneksi();
-            String sql ="UPDATE barang SET namabar=?,hargabeli=?,hargajual=? , stok=? where kodebar=?";
+            String sql ="UPDATE barang SET namabar=?,hargajual=? , stok=? where kodebar=?";
             PreparedStatement p=(PreparedStatement) c.prepareStatement(sql);
-            p.setString(5, kodebar);
+            p.setString(4, kodebar);
             p.setString(1, namabar);
-            p.setString(2, hargabeli);  
-            p.setString(3, hargajual);
-            p.setString(4, stok);
+            p.setString(2, hargajual);
+            p.setString(3, stok);
             p.executeUpdate();
             p.close();
             JOptionPane.showMessageDialog(this, "Sukses Update Data");
         }catch(SQLException e){
-            System.out.println(e);
+            JOptionPane.showMessageDialog(null, e);
         }finally{
             
             
-      }}}}  }
- try {        
-        
-            Connection c=ClassDatabase.getkoneksi();
-            Statement s= c.createStatement();
-            String sql="select * from barang";
-            ResultSet r=s.executeQuery(sql);
-            TblBarang.setModel(DbUtils.resultSetToTableModel(r));
+      }}}  }
+    try {        
+        Connection c=ClassDatabase.getkoneksi();
+        Statement s= c.createStatement();
+        String sql="select * from barang";
+        ResultSet r=s.executeQuery(sql);
+        TblBarang.setModel(DbUtils.resultSetToTableModel(r));
 }catch (Exception e){
 JOptionPane.showMessageDialog(null, e);
 }
@@ -424,7 +399,6 @@ JOptionPane.showMessageDialog(null, e);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TblBarang;
-    private javax.swing.JTextField TxtHargaBeli;
     private javax.swing.JTextField TxtHargaJual;
     private javax.swing.JTextField TxtKodeBarang;
     private javax.swing.JTextField TxtNamaBarang;
@@ -437,7 +411,6 @@ JOptionPane.showMessageDialog(null, e);
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;

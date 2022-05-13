@@ -44,10 +44,8 @@ public class FormDataPembelian extends javax.swing.JInternalFrame {
         TxtKodeBar = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         LabelNamaBarang = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        LabelHargaBeli = new javax.swing.JLabel();
         LabelHargaJual = new javax.swing.JLabel();
         LabelTotalStok = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -61,6 +59,10 @@ public class FormDataPembelian extends javax.swing.JInternalFrame {
         BtnClose = new javax.swing.JButton();
         TxtTanggalBeli = new com.toedter.calendar.JDateChooser();
         LabelNamaSup = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        TxtHargaBeli = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        LabelSaham = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TblPembelian = new javax.swing.JTable();
@@ -94,13 +96,9 @@ public class FormDataPembelian extends javax.swing.JInternalFrame {
 
         LabelNamaBarang.setText(" ");
 
-        jLabel5.setText("Harga Beli");
-
         jLabel6.setText("Harga Jual");
 
         jLabel7.setText("Total Stok");
-
-        LabelHargaBeli.setText(" ");
 
         LabelHargaJual.setText(" ");
 
@@ -150,6 +148,12 @@ public class FormDataPembelian extends javax.swing.JInternalFrame {
 
         LabelNamaSup.setText(" ");
 
+        jLabel12.setText("Harga Beli");
+
+        jLabel13.setText("Saham");
+
+        LabelSaham.setText(" ");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -157,47 +161,45 @@ public class FormDataPembelian extends javax.swing.JInternalFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel5)
                             .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelNamaBarang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LabelHargaJual, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LabelHargaBeli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LabelTotalStok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel13))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(LabelNamaBarang, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                            .addComponent(LabelHargaJual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LabelTotalStok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LabelSaham, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TxtKodePembelian, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(39, 39, 39))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(TxtKodeBar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(1, 1, 1)))
-                .addGap(38, 38, 38)
+                                .addGap(58, 58, 58)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TxtKodePembelian, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                            .addComponent(TxtKodeBar))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel10)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jLabel9)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel10)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TxtJumlahBeli)
-                    .addComponent(TxtTanggalBeli, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                    .addComponent(TxtTanggalBeli, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
                     .addComponent(LabelNamaSup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TxtKodeSup, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(TxtKodeSup, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(TxtHargaBeli)
+                    .addComponent(TxtJumlahBeli, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BtnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,42 +213,59 @@ public class FormDataPembelian extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(TxtKodePembelian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8)
-                    .addComponent(TxtJumlahBeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnAdd))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(TxtKodeBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel9)
-                        .addComponent(BtnSave))
-                    .addComponent(TxtTanggalBeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(LabelNamaBarang)
-                    .addComponent(jLabel10)
-                    .addComponent(TxtKodeSup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnClose))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(LabelHargaBeli)
-                    .addComponent(jLabel11)
-                    .addComponent(LabelNamaSup))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(LabelHargaJual))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(LabelTotalStok))
-                .addContainerGap(39, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(TxtJumlahBeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnAdd))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel12)
+                                    .addComponent(TxtHargaBeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(TxtTanggalBeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(BtnSave)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BtnClose)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(TxtKodeSup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(LabelNamaSup)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(TxtKodePembelian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(TxtKodeBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(LabelNamaBarang))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(LabelHargaJual))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(LabelTotalStok))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(LabelSaham))))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         TblPembelian.setModel(new javax.swing.table.DefaultTableModel(
@@ -317,9 +336,9 @@ public class FormDataPembelian extends javax.swing.JInternalFrame {
             ResultSet r=s.executeQuery(sql);
            while (r.next()){
                 this.LabelNamaBarang.setText(r.getString("namabar"));              
-                this.LabelHargaBeli.setText(r.getString("hargabeli"));
                 this.LabelHargaJual.setText(r.getString("hargajual")); 
                 this.LabelTotalStok.setText(r.getString("stok")); 
+                this.LabelSaham.setText(r.getString("saham")); 
             }
             r.close();
             s.close();
@@ -332,17 +351,17 @@ public class FormDataPembelian extends javax.swing.JInternalFrame {
     private void TxtKodeSupCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_TxtKodeSupCaretUpdate
         // TODO add your handling code here:
         try {            
-            Connection c=ClassDatabase.getkoneksi();
-            Statement s= c.createStatement();
-            String sql="Select * from supplier where kodesup='" + this.TxtKodeSup.getText() + "'";
-            ResultSet r=s.executeQuery(sql);
-           while (r.next()){
+            Connection c = ClassDatabase.getkoneksi();
+            Statement s = c.createStatement();
+            String sql = "Select * from supplier where kodesup='" + this.TxtKodeSup.getText() + "'";
+            ResultSet r = s.executeQuery(sql);
+            while (r.next()){
                 this.LabelNamaSup.setText(r.getString("namasup"));
             }
             r.close();
             s.close();
             
-        }catch(SQLException e) {
+        } catch(SQLException e) {
             System.out.println("Terjadi kesalahan" + e);
         }
     }//GEN-LAST:event_TxtKodeSupCaretUpdate
@@ -363,65 +382,78 @@ public class FormDataPembelian extends javax.swing.JInternalFrame {
         JOptionPane.YES_NO_OPTION);
         if (ex == 0) {
             dispose();
-    }
+        }
     }//GEN-LAST:event_BtnCloseActionPerformed
 
     private void BtnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSaveActionPerformed
         // TODO add your handling code here:
-        String kodepem=this.TxtKodePembelian.getText();
-        String kodebar=this.TxtKodeBar.getText();
-        String jumlahbeli=this.TxtJumlahBeli.getText();
+        String kodepem = this.TxtKodePembelian.getText();
+        String kodebar = this.TxtKodeBar.getText();
+        String jumlahbeli = TxtJumlahBeli.getText();
+        String hargabeli = TxtHargaBeli.getText();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String tanggalbeli = sdf.format(TxtTanggalBeli.getDate());
-        String kodesup=this.TxtKodeSup.getText();
-        if(TxtKodePembelian.getText().isEmpty()) 
+        String kodesup = this.TxtKodeSup.getText();
+        
+        int totalhargabeli = Integer.parseInt(TxtJumlahBeli.getText()) * Integer.parseInt(TxtHargaBeli.getText());
+        int totalstok = Integer.parseInt(jumlahbeli) + Integer.parseInt(this.LabelTotalStok.getText());
+        int saham = Integer.parseInt(this.LabelSaham.getText()) + totalhargabeli;
+            
+        if (TxtKodePembelian.getText().isEmpty()) 
         {
-        JOptionPane.showMessageDialog(this, "Data Belum Lengkap, Kode Pembelian Tidak Boleh Kosong");
-       }
-        else{
+            JOptionPane.showMessageDialog(this, "Data Belum Lengkap, Kode Pembelian Tidak Boleh Kosong");
+        } else {
         if (TxtKodeBar.getText().isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Data Belum Lengkap, Kode Barang Tidak Boleh Kosong");
-        }
-        else{
+        } else {
         if (TxtJumlahBeli.getText().isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Data Belum Lengkap, Jumlah Beli Tidak Boleh Kosong");
-        }
-        else{
+        } else {
         if (TxtTanggalBeli.getDateFormatString().isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Data Belum Lengkap, Tanggal Beli Tidak Boleh Kosong");
-        }   
-        else{
-    try {
+        } else {
+        try {            
             Connection c=ClassDatabase.getkoneksi();
-            String sql = "Insert into pembelian values (?,?,?,?,?)";
+            String sql = "Insert into pembelian values (?,?,?,?,?,?,?)";
             PreparedStatement p=(PreparedStatement) c.prepareStatement(sql);
             p.setString(1, kodepem);
             p.setString(2, kodebar);  
-            p.setString(3, jumlahbeli);
-            p.setString(4, tanggalbeli);
-            p.setString(5, kodesup);
+            p.setString(3, hargabeli);
+            p.setString(4, jumlahbeli);            
+            p.setString(5, Integer.toString(totalhargabeli));
+            p.setString(6, tanggalbeli);
+            p.setString(7, kodesup);
             p.executeUpdate();
             p.close();
             JOptionPane.showMessageDialog(this, "Sukses Tambah Data");
-    
-    
         }catch(SQLException e){
-            System.out.println(e);
+            JOptionPane.showMessageDialog(this, e);
         }finally{       
     }}}}}
-      try {        
-        
-            Connection c=ClassDatabase.getkoneksi();
-            Statement s= c.createStatement();
-            String sql="select * from pembelian";
-            ResultSet r=s.executeQuery(sql);
+        try {
+            Connection c = ClassDatabase.getkoneksi();
+            Statement s = c.createStatement();
+            String sql = "select * from pembelian";
+            ResultSet r = s.executeQuery(sql);
             TblPembelian.setModel(DbUtils.resultSetToTableModel(r));
-}catch (Exception e){
-JOptionPane.showMessageDialog(null, e);
-}
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        try {
+            Connection c=ClassDatabase.getkoneksi();
+            String sql ="UPDATE barang SET stok = ?, saham = ? where kodebar=?";
+            PreparedStatement p=(PreparedStatement) c.prepareStatement(sql);
+            p.setString(3, kodebar);
+            p.setString(1, Integer.toString(totalstok));
+            p.setString(2, Integer.toString(saham));
+            p.executeUpdate();
+            p.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_BtnSaveActionPerformed
 
 
@@ -429,12 +461,13 @@ JOptionPane.showMessageDialog(null, e);
     private javax.swing.JButton BtnAdd;
     private javax.swing.JButton BtnClose;
     private javax.swing.JButton BtnSave;
-    private javax.swing.JLabel LabelHargaBeli;
     private javax.swing.JLabel LabelHargaJual;
     private javax.swing.JLabel LabelNamaBarang;
     private javax.swing.JLabel LabelNamaSup;
+    private javax.swing.JLabel LabelSaham;
     private javax.swing.JLabel LabelTotalStok;
     private javax.swing.JTable TblPembelian;
+    private javax.swing.JTextField TxtHargaBeli;
     private javax.swing.JTextField TxtJumlahBeli;
     private javax.swing.JTextField TxtKodeBar;
     private javax.swing.JTextField TxtKodePembelian;
@@ -443,10 +476,11 @@ JOptionPane.showMessageDialog(null, e);
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
