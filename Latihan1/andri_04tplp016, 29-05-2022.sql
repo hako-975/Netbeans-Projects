@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Bulan Mei 2022 pada 15.47
--- Versi server: 10.4.22-MariaDB
--- Versi PHP: 7.4.28
+-- Waktu pembuatan: 29 Bulan Mei 2022 pada 17.06
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,19 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `barang` (
   `kodebar` varchar(10) NOT NULL,
   `namabar` varchar(30) NOT NULL,
+  `hargabeli` int(11) NOT NULL,
   `hargajual` int(11) NOT NULL,
   `stok` int(11) NOT NULL,
-  `saham` int(11) DEFAULT NULL
+  `saham` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `barang`
 --
 
-INSERT INTO `barang` (`kodebar`, `namabar`, `hargajual`, `stok`, `saham`) VALUES
-('1', 'Mouse Gaming AULA', 150000, 10, 950000),
-('2', 'Headset Gaming AULA', 450000, 0, 0),
-('3', 'Keyboard Gaming AULA', 600000, 0, 0);
+INSERT INTO `barang` (`kodebar`, `namabar`, `hargabeli`, `hargajual`, `stok`, `saham`) VALUES
+('1', 'Mouse Gaming AULA', 100000, 150000, 0, 0),
+('2', 'Headset Gaming AULA', 400000, 450000, 5, 2000000),
+('3', 'Keyboard Gaming AULA', 550000, 600000, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -72,7 +73,6 @@ INSERT INTO `login` (`id_login`, `username`, `password`) VALUES
 CREATE TABLE `pembelian` (
   `kodepem` varchar(10) NOT NULL,
   `kodebar` varchar(10) NOT NULL,
-  `hargabeli` int(11) NOT NULL,
   `jumlahbeli` int(11) NOT NULL,
   `totalhargabeli` int(11) NOT NULL,
   `tanggalbeli` date NOT NULL,
@@ -83,9 +83,36 @@ CREATE TABLE `pembelian` (
 -- Dumping data untuk tabel `pembelian`
 --
 
-INSERT INTO `pembelian` (`kodepem`, `kodebar`, `hargabeli`, `jumlahbeli`, `totalhargabeli`, `tanggalbeli`, `kodesup`) VALUES
-('1', '1', 100000, 5, 500000, '2022-05-13', '1'),
-('2', '1', 90000, 5, 450000, '2022-05-13', '1');
+INSERT INTO `pembelian` (`kodepem`, `kodebar`, `jumlahbeli`, `totalhargabeli`, `tanggalbeli`, `kodesup`) VALUES
+('1', '1', 5, 500000, '2022-05-29', '1'),
+('2', '2', 15, 6000000, '2022-05-29', '1'),
+('3', '1', 10, 1000000, '2022-05-29', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `penjualan`
+--
+
+CREATE TABLE `penjualan` (
+  `kodepenjualan` varchar(10) NOT NULL,
+  `kodebar` varchar(10) NOT NULL,
+  `jumlahjual` int(11) NOT NULL,
+  `tanggaljual` date NOT NULL,
+  `diskon` int(11) NOT NULL,
+  `totalhargajual` int(11) NOT NULL,
+  `profit` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `penjualan`
+--
+
+INSERT INTO `penjualan` (`kodepenjualan`, `kodebar`, `jumlahjual`, `tanggaljual`, `diskon`, `totalhargajual`, `profit`) VALUES
+('1', '1', 4, '2022-05-29', 0, 600000, 200000),
+('2', '1', 1, '2022-05-29', 0, 150000, 50000),
+('3', '1', 5, '2022-05-29', 0, 750000, 250000),
+('4', '2', 10, '2022-05-29', 0, 4500000, 500000);
 
 -- --------------------------------------------------------
 
@@ -105,7 +132,7 @@ CREATE TABLE `supplier` (
 --
 
 INSERT INTO `supplier` (`kodesup`, `namasup`, `alamatsup`, `notelpsup`) VALUES
-('1', 'Andri', 'Pocis', '087808675313'),
+('1', 'Andri Firman', 'Pocis', '087808675313'),
 ('2', 'Andre Farhan Saputra', 'Pocis', '087733932416'),
 ('3', 'Fiki Aji Panuntun', 'Buaran', '08964123421');
 
@@ -132,6 +159,12 @@ ALTER TABLE `pembelian`
   ADD PRIMARY KEY (`kodepem`),
   ADD KEY `kodebar` (`kodebar`),
   ADD KEY `kodesup` (`kodesup`);
+
+--
+-- Indeks untuk tabel `penjualan`
+--
+ALTER TABLE `penjualan`
+  ADD PRIMARY KEY (`kodepenjualan`);
 
 --
 -- Indeks untuk tabel `supplier`
