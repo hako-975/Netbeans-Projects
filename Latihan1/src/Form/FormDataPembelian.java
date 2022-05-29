@@ -150,6 +150,12 @@ public class FormDataPembelian extends javax.swing.JInternalFrame {
 
         jLabel12.setText("Harga Beli");
 
+        TxtHargaBeli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtHargaBeliActionPerformed(evt);
+            }
+        });
+
         jLabel13.setText("Saham");
 
         LabelSaham.setText(" ");
@@ -447,14 +453,18 @@ public class FormDataPembelian extends javax.swing.JInternalFrame {
             String sql ="UPDATE barang SET stok = ?, saham = ? where kodebar=?";
             PreparedStatement p=(PreparedStatement) c.prepareStatement(sql);
             p.setString(3, kodebar);
-            p.setString(1, Integer.toString(totalstok));
-            p.setString(2, Integer.toString(saham));
+            p.setInt(1, totalstok);
+            p.setInt(2, saham);
             p.executeUpdate();
             p.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_BtnSaveActionPerformed
+
+    private void TxtHargaBeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtHargaBeliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtHargaBeliActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
