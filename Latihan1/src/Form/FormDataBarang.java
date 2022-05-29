@@ -58,24 +58,36 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TblBarang = new javax.swing.JTable();
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Form Input Data Barang");
+        jLabel1.setText("Form Data Barang");
 
+        jLabel2.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         jLabel2.setText("Kode Barang");
 
+        jLabel3.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         jLabel3.setText("Nama Barang");
 
+        jLabel5.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         jLabel5.setText("Harga Beli");
 
+        jLabel6.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         jLabel6.setText("Stok");
 
+        TxtNamaBarang.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+
+        TxtHargaBeli.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+
+        TxtStok.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+
+        TxtKodeBarang.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         TxtKodeBarang.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
                 TxtKodeBarangCaretUpdate(evt);
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         jButton1.setText("Add");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +95,7 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         jButton2.setText("Save");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +103,7 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton3.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         jButton3.setText("Edit");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +111,7 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton4.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         jButton4.setText("Delete");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +119,7 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton5.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         jButton5.setText("Close");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,17 +127,21 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         jLabel7.setText("Saham");
 
+        LblSaham.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         LblSaham.setText("0");
 
+        jLabel9.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         jLabel9.setText("Harga Jual");
+
+        TxtHargaJual.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,12 +166,13 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
