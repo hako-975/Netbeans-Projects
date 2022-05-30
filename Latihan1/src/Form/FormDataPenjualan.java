@@ -411,9 +411,11 @@ public class FormDataPenjualan extends javax.swing.JInternalFrame {
         subtotalhargajual = (Integer.parseInt(this.LabelHargaJual.getText()) * Integer.parseInt(jumlahJual));
         totalhargajual = subtotalhargajual - ((subtotalhargajual * Integer.parseInt(diskon)) / 100);
         
-        int totalstok = Integer.parseInt(this.LabelStok.getText()) - Integer.parseInt(jumlahJual);
-        int saham = totalstok * Integer.parseInt(this.LabelHargaBeli.getText());
-        int profit = totalhargajual - (Integer.parseInt(this.LabelHargaBeli.getText()) * Integer.parseInt(jumlahJual));
+        int saham = 0, totalstok = 0, profit = 0;
+        
+        totalstok = Integer.parseInt(this.LabelStok.getText()) - Integer.parseInt(jumlahJual);
+        saham = totalstok * Integer.parseInt(this.LabelHargaBeli.getText());
+        profit = totalhargajual - (Integer.parseInt(this.LabelHargaBeli.getText()) * Integer.parseInt(jumlahJual));
         
         if (kodePenjualan.isEmpty()) 
         {

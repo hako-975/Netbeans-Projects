@@ -268,7 +268,8 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
         String hargajual=this.TxtHargaJual.getText();
         String stokbarang=this.TxtStok.getText();
         
-        int saham = Integer.parseInt(stokbarang) * Integer.parseInt(hargabeli);
+        int saham = 0;
+        saham = Integer.parseInt(stokbarang) * Integer.parseInt(hargabeli);
         
         if(TxtKodeBarang.getText().isEmpty()) 
         {
@@ -356,7 +357,8 @@ public class FormDataBarang extends javax.swing.JInternalFrame {
     String hargajual=this.TxtHargaJual.getText();
     String stok=this.TxtStok.getText();
     
-    int saham = Integer.parseInt(stok) * Integer.parseInt(hargabeli);
+    int saham = 0;
+    saham = Integer.parseInt(stok) * Integer.parseInt(hargabeli);
     
     if(TxtKodeBarang.getText().isEmpty()) 
     {

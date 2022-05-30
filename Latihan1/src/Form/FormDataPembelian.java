@@ -416,9 +416,11 @@ public class FormDataPembelian extends javax.swing.JInternalFrame {
         String tanggalbeli = sdf.format(TxtTanggalBeli.getDate());
         String kodesup = this.TxtKodeSup.getText();
         
-        int totalhargabeli = Integer.parseInt(TxtJumlahBeli.getText()) * Integer.parseInt(this.LabelHargaBeli.getText());
-        int totalstok = Integer.parseInt(jumlahbeli) + Integer.parseInt(this.LabelTotalStok.getText());
-        int saham = totalstok * Integer.parseInt(this.LabelHargaBeli.getText());
+        int saham = 0, totalhargabeli = 0, totalstok = 0;
+        
+        totalhargabeli = Integer.parseInt(TxtJumlahBeli.getText()) * Integer.parseInt(this.LabelHargaBeli.getText());
+        totalstok = Integer.parseInt(jumlahbeli) + Integer.parseInt(this.LabelTotalStok.getText());
+        saham = totalstok * Integer.parseInt(this.LabelHargaBeli.getText());
             
         if (TxtKodePembelian.getText().isEmpty()) 
         {
