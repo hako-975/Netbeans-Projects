@@ -453,6 +453,8 @@ public class FormDataPembelian extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Sukses Tambah Data");
         }catch(SQLException e){
             JOptionPane.showMessageDialog(this, e);
+            totalstok = Integer.parseInt(this.LabelTotalStok.getText());
+            saham = totalstok * Integer.parseInt(this.LabelHargaBeli.getText());
         }finally{       
     }}}}}
         try {

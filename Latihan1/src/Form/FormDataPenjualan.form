@@ -66,26 +66,19 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Component id="jLabel13" min="-2" pref="125" max="-2" attributes="0"/>
-                          <Component id="jLabel14" min="-2" pref="125" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jLabel14" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
                       <Component id="BtnDiskon" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
                       <Component id="jLabel11" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
                       <Component id="jLabel10" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
                       <Component id="BtnPencarian" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="LabelTotal" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="TxtDiskon" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="TxtTanggalJual" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="TxtJumlahJual" min="-2" pref="150" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="LabelSubTotal" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="TxtTanggalJual" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="TxtJumlahJual" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="TxtDiskon" min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -94,7 +87,8 @@
                               <Component id="BtnClose" min="-2" pref="80" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="TxtCari" alignment="0" max="32767" attributes="0"/>
+                      <Component id="TxtCari" alignment="0" min="-2" pref="306" max="-2" attributes="0"/>
+                      <Component id="LabelTotal" min="-2" pref="150" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -110,15 +104,13 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel9" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="LabelHargaJual" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jLabel14" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="LabelTotal" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="BtnPencarian" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="TxtCari" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel6" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="LabelStok" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="BtnPencarian" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="TxtCari" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -153,15 +145,19 @@
                               <Component id="jLabel4" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="LabelNamaBarang" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="BtnDiskon" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="TxtDiskon" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="BtnClose" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="TxtDiskon" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel5" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="LabelHargaBeli" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jLabel13" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="LabelSubTotal" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel14" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="LabelTotal" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel5" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="LabelHargaBeli" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -277,25 +273,6 @@
             <Property name="text" type="java.lang.String" value="Tanggal Jual"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtDiskon">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Noto Sans" size="12" style="0"/>
-            </Property>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
-          </Properties>
-          <Events>
-            <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="TxtDiskonCaretUpdate"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel13">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Noto Sans" size="12" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="SubTotal"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JButton" name="BtnDiskon">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -377,20 +354,15 @@
             <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelSubTotal">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Noto Sans" size="12" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="-"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="TxtJumlahJual">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Noto Sans" size="12" style="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="TxtJumlahJualCaretUpdate"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="TxtCari">
           <Properties>
@@ -399,6 +371,9 @@
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
+          <Events>
+            <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="TxtCariCaretUpdate"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnPencarian">
           <Properties>
@@ -426,6 +401,14 @@
             </Property>
             <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TxtDiskon">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="TxtDiskonCaretUpdate"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

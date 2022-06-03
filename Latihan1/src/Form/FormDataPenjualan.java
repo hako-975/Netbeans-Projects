@@ -55,8 +55,6 @@ public class FormDataPenjualan extends javax.swing.JInternalFrame {
         LabelStok = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        TxtDiskon = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
         BtnDiskon = new javax.swing.JButton();
         BtnAdd = new javax.swing.JButton();
         BtnSave = new javax.swing.JButton();
@@ -66,12 +64,12 @@ public class FormDataPenjualan extends javax.swing.JInternalFrame {
         TxtTanggalJual = new com.toedter.calendar.JDateChooser();
         jLabel14 = new javax.swing.JLabel();
         LabelTotal = new javax.swing.JLabel();
-        LabelSubTotal = new javax.swing.JLabel();
         TxtJumlahJual = new javax.swing.JTextField();
         TxtCari = new javax.swing.JTextField();
         BtnPencarian = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         LabelHargaJual = new javax.swing.JLabel();
+        TxtDiskon = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TblPenjualan = new javax.swing.JTable();
@@ -119,17 +117,6 @@ public class FormDataPenjualan extends javax.swing.JInternalFrame {
         jLabel11.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         jLabel11.setText("Tanggal Jual");
 
-        TxtDiskon.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
-        TxtDiskon.setToolTipText("");
-        TxtDiskon.addCaretListener(new javax.swing.event.CaretListener() {
-            public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                TxtDiskonCaretUpdate(evt);
-            }
-        });
-
-        jLabel13.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
-        jLabel13.setText("SubTotal");
-
         BtnDiskon.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         BtnDiskon.setText("Diskon %");
         BtnDiskon.addActionListener(new java.awt.event.ActionListener() {
@@ -176,13 +163,20 @@ public class FormDataPenjualan extends javax.swing.JInternalFrame {
         LabelTotal.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         LabelTotal.setText("-");
 
-        LabelSubTotal.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
-        LabelSubTotal.setText("-");
-
         TxtJumlahJual.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        TxtJumlahJual.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                TxtJumlahJualCaretUpdate(evt);
+            }
+        });
 
         TxtCari.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         TxtCari.setToolTipText("");
+        TxtCari.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                TxtCariCaretUpdate(evt);
+            }
+        });
 
         BtnPencarian.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         BtnPencarian.setText("Cari");
@@ -197,6 +191,13 @@ public class FormDataPenjualan extends javax.swing.JInternalFrame {
 
         LabelHargaJual.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         LabelHargaJual.setText("-");
+
+        TxtDiskon.setEnabled(false);
+        TxtDiskon.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                TxtDiskonCaretUpdate(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -225,29 +226,25 @@ public class FormDataPenjualan extends javax.swing.JInternalFrame {
                     .addComponent(LabelSaham, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnPencarian, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(LabelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TxtDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(TxtTanggalJual, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(TxtJumlahJual, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(LabelSubTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TxtTanggalJual, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtJumlahJual, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BtnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BtnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BtnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(TxtCari))
+                    .addComponent(TxtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -260,14 +257,12 @@ public class FormDataPenjualan extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(LabelHargaJual, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BtnPencarian, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelStok, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnPencarian, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LabelStok, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -295,14 +290,16 @@ public class FormDataPenjualan extends javax.swing.JInternalFrame {
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(LabelNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BtnDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BtnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelHargaBeli, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelSubTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LabelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LabelHargaBeli, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -453,7 +450,10 @@ public class FormDataPenjualan extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(this, "Sukses Tambah Data");
             }catch(SQLException e){
                 JOptionPane.showMessageDialog(this, e);
-            } finally {}}}}}}
+                totalstok = Integer.parseInt(this.LabelStok.getText());
+                saham = totalstok * Integer.parseInt(this.LabelHargaBeli.getText());
+            } finally {
+            }}}}}}
             try {
                 Connection c = ClassDatabase.getkoneksi();
                 Statement s = c.createStatement();
@@ -475,50 +475,127 @@ public class FormDataPenjualan extends javax.swing.JInternalFrame {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
             }
+            LabelTotal.setText(Integer.toString(totalhargajual));
             TxtKodeBarang.setText("");
     }//GEN-LAST:event_BtnSaveActionPerformed
 
     private void BtnDiskonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDiskonActionPerformed
         // TODO add your handling code here:
+        int ex = JOptionPane.showConfirmDialog(null, "Apakah ada DISKON? ", "Anda yakin?",
+        JOptionPane.YES_NO_OPTION);
+        if (ex == 0) {    
+            TxtDiskon.setText("");
+            TxtDiskon.setEnabled(true);
+            TxtDiskon.requestFocus();
+            }
+        else {
+            TxtDiskon.setText("0");
+        }
+    }//GEN-LAST:event_BtnDiskonActionPerformed
+
+    private void BtnPencarianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPencarianActionPerformed
+        DefaultTableModel tabelTampil1 = new DefaultTableModel();
+        String cari = this.TxtCari.getText();
+        tabelTampil1.addColumn("Kode Penjualan");
+        tabelTampil1.addColumn("Kode Barang");
+        tabelTampil1.addColumn("Jumlah Jual");
+        tabelTampil1.addColumn("Tanggal Jual");
+        tabelTampil1.addColumn("Diskon");
+        tabelTampil1.addColumn("Total Harga Jual");
+        tabelTampil1.addColumn("Profit");
+        
+        try{
+            Connection c=ClassDatabase.getkoneksi();
+            Statement s= c.createStatement();
+            String sql = "select * from penjualan where kodepenjualan LIKE '%" + cari + "%'" +
+                        " OR kodebar LIKE '%" + cari + "%'" +
+                        " OR jumlahjual LIKE '%" + cari + "%'" +    
+                        " OR tanggaljual LIKE '%" + cari + "%'" +
+                        " OR diskon LIKE '%" + cari + "%'" +
+                        " OR totalhargajual LIKE '%" + cari + "%'" +
+                        " OR profit LIKE '%" + cari + "%'";
+            ResultSet r=s.executeQuery(sql);
+            while (r.next()) {
+            tabelTampil1.addRow(new Object[]{
+            r.getString(1),
+            r.getString(2),
+            r.getString(3),
+            r.getString(4),
+            r.getString(5),
+            r.getString(6),
+            r.getString(7)
+            });
+            }
+            TblPenjualan.setModel(tabelTampil1);
+
+                }catch (Exception e){
+                    JOptionPane.showMessageDialog(null, e);
+            }
+    }//GEN-LAST:event_BtnPencarianActionPerformed
+
+    private void TxtCariCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_TxtCariCaretUpdate
+        // TODO add your handling code here:
+        DefaultTableModel tabelTampil1 = new DefaultTableModel();
+        String cari = this.TxtCari.getText();
+        tabelTampil1.addColumn("Kode Penjualan");
+        tabelTampil1.addColumn("Kode Barang");
+        tabelTampil1.addColumn("Jumlah Jual");
+        tabelTampil1.addColumn("Tanggal Jual");
+        tabelTampil1.addColumn("Diskon");
+        tabelTampil1.addColumn("Total Harga Jual");
+        tabelTampil1.addColumn("Profit");
+        
+        try{
+            Connection c=ClassDatabase.getkoneksi();
+            Statement s= c.createStatement();
+            String sql = "select * from penjualan where kodepenjualan LIKE '%" + cari + "%'" +
+                        " OR kodebar LIKE '%" + cari + "%'" +
+                        " OR jumlahjual LIKE '%" + cari + "%'" +    
+                        " OR tanggaljual LIKE '%" + cari + "%'" +
+                        " OR diskon LIKE '%" + cari + "%'" +
+                        " OR totalhargajual LIKE '%" + cari + "%'" +
+                        " OR profit LIKE '%" + cari + "%'";
+            ResultSet r=s.executeQuery(sql);
+            while (r.next()) {
+            tabelTampil1.addRow(new Object[]{
+            r.getString(1),
+            r.getString(2),
+            r.getString(3),
+            r.getString(4),
+            r.getString(5),
+            r.getString(6),
+            r.getString(7)
+            });
+            }
+            TblPenjualan.setModel(tabelTampil1);
+
+                }catch (Exception e){
+                    JOptionPane.showMessageDialog(null, e);
+            }
+    }//GEN-LAST:event_TxtCariCaretUpdate
+
+    private void TxtJumlahJualCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_TxtJumlahJualCaretUpdate
+        // TODO add your handling code here:
+        // Update Totalharga
         String jumlahJual = TxtJumlahJual.getText();
         String diskon = this.TxtDiskon.getText();
-        
-        subtotalhargajual = (Integer.parseInt(this.LabelHargaBeli.getText()) * Integer.parseInt(jumlahJual));
+                
+        subtotalhargajual = (Integer.parseInt(this.LabelHargaJual.getText()) * Integer.parseInt(jumlahJual));
         totalhargajual = subtotalhargajual - ((subtotalhargajual * Integer.parseInt(diskon)) / 100);
         
-        this.LabelSubTotal.setText(Integer.toString(subtotalhargajual));
         this.LabelTotal.setText(Integer.toString(totalhargajual));
-    }//GEN-LAST:event_BtnDiskonActionPerformed
+    }//GEN-LAST:event_TxtJumlahJualCaretUpdate
 
     private void TxtDiskonCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_TxtDiskonCaretUpdate
         // TODO add your handling code here:
         String jumlahJual = TxtJumlahJual.getText();
         String diskon = this.TxtDiskon.getText();
                 
-        subtotalhargajual = (Integer.parseInt(this.LabelHargaBeli.getText()) * Integer.parseInt(jumlahJual));
+        subtotalhargajual = (Integer.parseInt(this.LabelHargaJual.getText()) * Integer.parseInt(jumlahJual));
         totalhargajual = subtotalhargajual - ((subtotalhargajual * Integer.parseInt(diskon)) / 100);
         
-        this.LabelSubTotal.setText(Integer.toString(subtotalhargajual));
         this.LabelTotal.setText(Integer.toString(totalhargajual));
     }//GEN-LAST:event_TxtDiskonCaretUpdate
-
-    private void BtnPencarianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPencarianActionPerformed
-        // TODO add your handling code here:
-        String cari = this.TxtCari.getText();
-        try {
-                Connection c = ClassDatabase.getkoneksi();
-                Statement s = c.createStatement();
-                String sql = "select * from penjualan where kodepenjualan LIKE '%" + cari + "%'" +
-                        " OR kodebar LIKE '%" + cari + "%'" +
-                        " OR tanggaljual LIKE '%" + cari + "%'" +
-                        " OR diskon LIKE '%" + cari + "%'" +
-                        " OR totalhargajual LIKE '%" + cari + "%'";
-                ResultSet r = s.executeQuery(sql);
-                TblPenjualan.setModel(DbUtils.resultSetToTableModel(r));
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
-            }
-    }//GEN-LAST:event_BtnPencarianActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -532,7 +609,6 @@ public class FormDataPenjualan extends javax.swing.JInternalFrame {
     private javax.swing.JLabel LabelNamaBarang;
     private javax.swing.JLabel LabelSaham;
     private javax.swing.JLabel LabelStok;
-    private javax.swing.JLabel LabelSubTotal;
     private javax.swing.JLabel LabelTotal;
     private javax.swing.JTable TblPenjualan;
     private javax.swing.JTextField TxtCari;
@@ -544,7 +620,6 @@ public class FormDataPenjualan extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
