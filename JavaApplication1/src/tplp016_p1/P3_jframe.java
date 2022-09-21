@@ -153,12 +153,12 @@ public class P3_jframe extends javax.swing.JFrame {
         // TODO add your handling code here:
 //        System.out.println(tf_nim.getText());
         P2_data dtMhs = new P2_data();
-        
+
         dtMhs.setNim(tf_nim.getText());
         dtMhs.setNama(tf_nama.getText());
         dtMhs.setN_uts(Double.parseDouble(tf_uts.getText()));
         dtMhs.setN_uas(Double.parseDouble(tf_uas.getText()));
-        
+
         tf_nilaiAkhir.setText(Double.toString(dtMhs.hitungNilaiAkhir()));
         tf_grade.setText(dtMhs.hitungGrade());
     }//GEN-LAST:event_jButton1ActionPerformed
