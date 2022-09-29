@@ -160,7 +160,7 @@ public class P3_jframe extends javax.swing.JFrame {
         dtMhs.setN_uas(Double.parseDouble(tf_uas.getText()));
 
         tf_nilaiAkhir.setText(Double.toString(dtMhs.hitungNilaiAkhir()));
-        tf_grade.setText(dtMhs.hitungGrade());
+        tf_grade.setText(String.valueOf(dtMhs.hitungGrade()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

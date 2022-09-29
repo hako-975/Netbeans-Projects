@@ -9,7 +9,8 @@ package tplp016_p1;
  * @author andri
  */
 public class P2_data {
-    String nim, nama, grade;
+    String nim, nama;
+    char grade;
     double n_uts, n_uas, n_akhir;
 
     public String getNim() {
@@ -49,16 +50,16 @@ public class P2_data {
         return n_akhir = (n_uts + n_uas) / 2;
     }
     
-    public String hitungGrade()
+    public char hitungGrade()
     {
         if (n_akhir >= 90) {
-            grade = "A";
+            grade = 'A';
         } else if (n_akhir >= 80 && n_akhir < 90) {
-            grade = "B";
+            grade = 'B';
         } else if (n_akhir >= 60 && n_akhir < 80) {
-            grade = "C";
+            grade = 'C';
         } else {
-            grade = "D";
+            grade = 'D';
         }
         
         return grade;
