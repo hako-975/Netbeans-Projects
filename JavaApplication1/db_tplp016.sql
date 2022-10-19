@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Okt 2022 pada 05.17
+-- Waktu pembuatan: 12 Okt 2022 pada 16.08
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -44,7 +44,8 @@ CREATE TABLE `tbl_mahasiswa` (
 INSERT INTO `tbl_mahasiswa` (`id`, `nama_mahasiswa`, `nim`, `n_uts`, `n_uas`, `n_akhir`, `grade`) VALUES
 (10, 'Andri Firman Saputra', '201011402125', 100, 98, 99, 'A'),
 (11, 'Fiki Aji Panuntun', '201011402126', 98, 80, 89, 'B'),
-(12, 'Rangga Ariansyah', '201011402127', 95, 95, 95, 'A');
+(12, 'Rangga Ariansyah', '201011402127', 95, 95, 95, 'A'),
+(14, 'Andre', '201011402124', 90, 96, 93, 'A');
 
 --
 -- Indexes for dumped tables
@@ -64,7 +65,7 @@ ALTER TABLE `tbl_mahasiswa`
 -- AUTO_INCREMENT untuk tabel `tbl_mahasiswa`
 --
 ALTER TABLE `tbl_mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
