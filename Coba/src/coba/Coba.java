@@ -4,7 +4,7 @@
  */
 package coba;
 
-import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 /**
  *
@@ -16,10 +16,7 @@ public class Coba {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-   String name = "Java";
-   String language = "Programming";
-   String fullName = name + language;
-   boolean test = fullName.equals(name + language);
-   System.out.println(test);
-}
+        String nilai = "10.15";
+        System.out.println(Double.parseDouble(nilai));
+    }
 }
