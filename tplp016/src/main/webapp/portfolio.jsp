@@ -16,7 +16,7 @@
             <!--include file main menu-->
             <jsp:include page="/shared/mainmenu.jsp" />
             <div class="content">
-                <h2>Home</h2>
+                <h2>Portfolio</h2>
             </div>
             <!--footer-->
             <jsp:include page="/shared/footer.jsp" />
