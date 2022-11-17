@@ -22,6 +22,7 @@
             height: 200px;
             width: 200px;
             margin: auto;
+            border-radius: 20px;
         }
         .form {
             background-color: #393438;
@@ -52,8 +53,24 @@
             border-radius: 4px;
             border: none;
         }
-        .kontak {
+        .text-center {
             text-align: center;
+        }
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .table {
+            margin-top: 15px;
+            padding: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            background-color: #393438;
+            color: white;
+            border-radius: 10px;
+        }
+        .table tr td {
+            padding: 5px;
         }
         .heading2 {
             text-align: center;

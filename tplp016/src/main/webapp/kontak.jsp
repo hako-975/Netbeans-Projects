@@ -16,14 +16,30 @@
             <!--include file main menu-->
             <jsp:include page="/shared/mainmenu.jsp" />
             <div class="content">
-                <div class="kontak">
-                    <h2>Kontak</h2>
-                    <div class="profile"></div>
-                    <h4>Nama Lengkap: Andri Firman Saputra</h4>
-                    <h4>NIM: 201011402125</h4>
-                    <h4>Kelas: 05TPLP016</h4>
-                    <h4>Email: andrifirmansaputra1@gmail.com</h4>
-                </div>
+                <h2 class="text-center">Kontak</h2>
+                <div class="profile"></div>
+                <table class="mx-auto table">
+                    <tr>
+                        <td><strong>Nama Lengkap</strong></td>
+                        <td>:</td>
+                        <td><strong>Andri Firman Saputra</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>NIM</strong></td>
+                        <td>:</td>
+                        <td><strong>201011402125</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kelas</strong></td>
+                        <td>:</td>
+                        <td><strong>05TPLP016</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email</strong></td>
+                        <td>:</td>
+                        <td><strong>andrifirmansaputra1@gmail.com</strong></td>
+                    </tr>
+                </table>
             </div>
             <!--footer-->
             <jsp:include page="/shared/footer.jsp" />
