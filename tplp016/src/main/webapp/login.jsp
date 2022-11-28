@@ -16,6 +16,17 @@
             <!--include file main menu-->
             <jsp:include page="/shared/mainmenu.jsp" />
             <div class="content">
+                <%
+                    String notif = "";
+                    try {
+                        String gagalLogin = session.getAttribute("gagalLogin").toString();
+                        if (gagalLogin.equals("1")) {
+                            notif = "<h3 class='notif-gagal'>Username dan Password tidak ditemukan!</h3>";
+                        }
+                    } catch (Exception e) {
+                    }
+                %>
+                <%= notif %>
                 <div class="form">
                     <h2 class="heading2">Login</h2>
                     <form action="auth.jsp" method="post">

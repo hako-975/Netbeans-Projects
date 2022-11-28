@@ -100,5 +100,14 @@
             width: 100%;
             background-color: #989898;
         }
+        .notif-gagal {
+            text-align: center;
+            color: white;
+            padding: 10px;
+            background-color: red;
+        }
+        .btn-logout {
+            background-color: red;
+        }
     </style>
 </head>
