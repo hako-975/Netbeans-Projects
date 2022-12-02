@@ -15,40 +15,49 @@ import view.PesanDialog;
  *
  * @author 4R135
  */
-public class Admin {
+public class Mobil {
 
-    private String username, password, namaAdmin;
+    private String kodeMobil, merkMobil, tahunMobil, hargaMobil;
+
     private String pesan;
     private Object[][] list;
     private final Koneksi koneksi = new Koneksi();
     private final PesanDialog pesanDialog = new PesanDialog();
 
-    public String getUsername() {
-        return username;
+    public String getKodeMobil() {
+        return kodeMobil;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setKodeMobil(String kodeMobil) {
+        this.kodeMobil = kodeMobil;
     }
 
-    public String getNama_admin() {
-        return namaAdmin;
+    public String getMerkMobil() {
+        return merkMobil;
     }
 
-    public void setNama_admin(String namaAdmin) {
-        this.namaAdmin = namaAdmin;
+    public void setMerkMobil(String merkMobil) {
+        this.merkMobil = merkMobil;
     }
-    
+
+    public String getTahunMobil() {
+        return tahunMobil;
+    }
+
+    public void setTahunMobil(String tahunMobil) {
+        this.tahunMobil = tahunMobil;
+    }
+
+    public String getHargaMobil() {
+        return hargaMobil;
+    }
+
+    public void setHargaMobil(String hargaMobil) {
+        this.hargaMobil = hargaMobil;
+    }
+
     public String getPesan() {
         return pesan;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public Object[][] getList() {
@@ -71,32 +80,35 @@ public class Admin {
             ResultSet rset;
 
             try {
-                SQLStatemen = "select * from admin where username=?";
+                SQLStatemen = "select * from mobil where kodeMobil=?";
 
                 preparedStatement = connection.prepareStatement(SQLStatemen);
-                preparedStatement.setString(1, username);
+                preparedStatement.setString(1, kodeMobil);
                 rset = preparedStatement.executeQuery();
 
                 rset.next();
                 if (rset.getRow() > 0) {
-                    if (pesanDialog.tampilkanPilihan("Username sudah ada\nApakah data diperbaharui?", "Konfirmasi", new Object[]{"Ya", "Tidak"}) == 0) {
+                    if (pesanDialog.tampilkanPilihan("Kode Mobil sudah ada\nApakah data diperbaharui?", "Konfirmasi", new Object[]{"Ya", "Tidak"}) == 0) {
                         simpan = true;
-                        SQLStatemen = "update admin set namaAdmin=? where username=?";
+                        SQLStatemen = "update mobil set merkMobil=?, tahunMobil=?, hargaMobil=? where kodeMobil=?";
 
                         preparedStatement = connection.prepareStatement(SQLStatemen);
-                        preparedStatement.setString(1, namaAdmin);
-                        preparedStatement.setString(2, username);
+                        preparedStatement.setString(1, merkMobil);
+                        preparedStatement.setInt(2, Integer.parseInt(tahunMobil));
+                        preparedStatement.setInt(3, Integer.parseInt(hargaMobil));
+                        preparedStatement.setString(4, kodeMobil);
 
                         jumlahSimpan = preparedStatement.executeUpdate();
                     }
                 } else {
                     simpan = true;
-                    SQLStatemen = "insert into admin(username, password, namaAdmin) values (?,?,?)";
+                    SQLStatemen = "insert into mobil(kodeMobil, merkMobil, tahunMobil, hargaMobil) values (?,?,?,?)";
 
                     preparedStatement = connection.prepareStatement(SQLStatemen);
-                    preparedStatement.setString(1, username);
-                    preparedStatement.setString(2, password);
-                    preparedStatement.setString(3, namaAdmin);
+                    preparedStatement.setString(1, kodeMobil);
+                    preparedStatement.setInt(2, Integer.parseInt(tahunMobil));
+                    preparedStatement.setInt(3, Integer.parseInt(hargaMobil));
+                    preparedStatement.setString(4, hargaMobil);
 
                     jumlahSimpan = preparedStatement.executeUpdate();
                 }
@@ -104,7 +116,7 @@ public class Admin {
                 if (simpan) {
                     if (jumlahSimpan < 1) {
                         adaKesalahan = true;
-                        pesan = "Gagal menyimpan data admin";
+                        pesan = "Gagal menyimpan data mobil";
                     }
                 }
 
@@ -113,7 +125,7 @@ public class Admin {
                 connection.close();
             } catch (SQLException ex) {
                 adaKesalahan = true;
-                pesan = "Tidak dapat membuka tabel admin\n" + ex + "\n" + SQLStatemen;
+                pesan = "Tidak dapat membuka tabel mobil\n" + ex + "\n" + SQLStatemen;
             }
         } else {
             adaKesalahan = true;
@@ -123,32 +135,34 @@ public class Admin {
         return !adaKesalahan;
     }
 
-    public boolean baca(String username) {
+    public boolean baca(String kodeMobil) {
         boolean adaKesalahan = false;
         Connection connection;
 
-        this.username = "";
-        this.password = "";
-        this.namaAdmin = "";
+        this.kodeMobil = "";
+        this.merkMobil = "";
+        this.tahunMobil = "";
+        this.hargaMobil = "";
 
         if ((connection = koneksi.getConnection()) != null) {
             PreparedStatement preparedStatement;
             ResultSet rset;
 
             try {
-                String SQLStatemen = "select * from admin where username=?";
+                String SQLStatemen = "select * from mobil where kodeMobil=?";
                 preparedStatement = connection.prepareStatement(SQLStatemen);
-                preparedStatement.setString(1, username);
+                preparedStatement.setString(1, kodeMobil);
                 rset = preparedStatement.executeQuery();
 
                 rset.next();
                 if (rset.getRow() > 0) {
-                    this.username = rset.getString("username");
-                    this.password = rset.getString("password");
-                    this.namaAdmin = rset.getString("namaAdmin");
+                    this.kodeMobil = rset.getString("kodeMobil");
+                    this.merkMobil = rset.getString("merkMobil");
+                    this.tahunMobil = rset.getString("tahunMobil");
+                    this.hargaMobil = rset.getString("hargaMobil");
                 } else {
                     adaKesalahan = true;
-                    pesan = "Username \"" + username + "\" tidak ditemukan";
+                    pesan = "Kode Mobil \"" + kodeMobil + "\" tidak ditemukan";
                 }
 
                 preparedStatement.close();
@@ -156,7 +170,7 @@ public class Admin {
                 connection.close();
             } catch (SQLException ex) {
                 adaKesalahan = true;
-                pesan = "Tidak dapat membuka tabel admin\n" + ex;
+                pesan = "Tidak dapat membuka tabel mobil\n" + ex;
             }
         } else {
             adaKesalahan = true;
@@ -177,22 +191,22 @@ public class Admin {
             ResultSet rset;
 
             try {
-                SQLStatemen = "select username, namaAdmin from admin"; 
-                sta = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY); 
+                SQLStatemen = "select kodeMobil, merkMobil, tahunMobil, hargaMobil from mobil";
+                sta = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 rset = sta.executeQuery(SQLStatemen);
-                
+
                 rset.next();
                 rset.last();
                 list = new Object[rset.getRow()][2];
-                if (rset.getRow()>0){
+                if (rset.getRow() > 0) {
                     rset.first();
-                    int i=0;
-                    do { 
-                        list[i] = new Object[]{rset.getString("username"), rset.getString("namaAdmin")};
+                    int i = 0;
+                    do {
+                        list[i] = new Object[]{rset.getString("kodeMobil"), rset.getString("merkMobil"), rset.getString("tahunMobil"), rset.getString("hargaMobil")};
                         i++;
                     } while (rset.next());
                 }
-                
+
                 sta.close();
                 rset.close();
                 connection.close();
@@ -208,7 +222,7 @@ public class Admin {
         return !adaKesalahan;
     }
 
-    public boolean hapus(String username) {
+    public boolean hapus(String kodeMobil) {
         boolean adaKesalahan = false;
         Connection connection;
 
@@ -218,13 +232,13 @@ public class Admin {
             PreparedStatement preparedStatement;
 
             try {
-                SQLStatemen = "delete from admin where username=?";
+                SQLStatemen = "delete from mobil where kodeMobil=?";
                 preparedStatement = connection.prepareStatement(SQLStatemen);
-                preparedStatement.setString(1, username);
+                preparedStatement.setString(1, kodeMobil);
                 jumlahHapus = preparedStatement.executeUpdate();
 
                 if (jumlahHapus < 1) {
-                    pesan = "Data admin dengan Username " + username + " tidak ditemukan";
+                    pesan = "Data mobil dengan KodeMobil " + kodeMobil + " tidak ditemukan";
                     adaKesalahan = true;
                 }
 
@@ -232,7 +246,7 @@ public class Admin {
                 connection.close();
             } catch (SQLException ex) {
                 adaKesalahan = true;
-                pesan = "Tidak dapat membuka tabel admin\n" + ex;
+                pesan = "Tidak dapat membuka tabel mobil\n" + ex;
             }
         } else {
             adaKesalahan = true;

@@ -5,20 +5,20 @@
  */
 package view;
 
-import controller.AdminController;
+import controller.MobilController;
 import java.awt.event.KeyEvent;
 
 /**
  *
  * @author Alvin Hendrawan
  */
-public class FormAdmin extends javax.swing.JInternalFrame {
-    private final AdminController adminController = 
-            new AdminController();
+public class FormMobil extends javax.swing.JInternalFrame {
+    private final MobilController mobilController = 
+            new MobilController();
     /**
      * Creates new form FormAdmin
      */
-    public FormAdmin() {
+    public FormMobil() {
         initComponents();
     }
 
@@ -34,11 +34,13 @@ public class FormAdmin extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        usernameTextField = new javax.swing.JTextField();
-        namaAdminTextField = new javax.swing.JTextField();
-        passwordField = new javax.swing.JPasswordField();
+        kodeMobilTextField = new javax.swing.JTextField();
+        merkMobilTextField = new javax.swing.JTextField();
         lihatButton = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        tahunMobilTextField = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        hargaMobilTextField = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         simpanButton = new javax.swing.JButton();
         hapusButton = new javax.swing.JButton();
@@ -50,21 +52,19 @@ public class FormAdmin extends javax.swing.JInternalFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Admin"));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setText("Username");
+        jLabel1.setText("Kode Mobil");
 
-        jLabel2.setText("Nama Admin");
+        jLabel2.setText("Merk Mobil");
 
-        jLabel5.setText("Password");
-
-        usernameTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        kodeMobilTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                usernameTextFieldKeyPressed(evt);
+                kodeMobilTextFieldKeyPressed(evt);
             }
         });
 
-        namaAdminTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        merkMobilTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                namaAdminTextFieldKeyPressed(evt);
+                merkMobilTextFieldKeyPressed(evt);
             }
         });
 
@@ -75,6 +75,22 @@ public class FormAdmin extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel3.setText("Tahun Mobil");
+
+        tahunMobilTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tahunMobilTextFieldKeyPressed(evt);
+            }
+        });
+
+        jLabel4.setText("Harga Mobil");
+
+        hargaMobilTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                hargaMobilTextFieldKeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -82,18 +98,23 @@ public class FormAdmin extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5))
-                .addGap(25, 25, 25)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(usernameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lihatButton))
-                    .addComponent(namaAdminTextField)
-                    .addComponent(passwordField))
-                .addContainerGap(80, Short.MAX_VALUE))
+                    .addComponent(jLabel4)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(merkMobilTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3))
+                            .addGap(25, 25, 25)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tahunMobilTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(kodeMobilTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(lihatButton))
+                                .addComponent(hargaMobilTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,17 +122,21 @@ public class FormAdmin extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kodeMobilTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lihatButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(namaAdminTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(merkMobilTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                    .addComponent(jLabel3)
+                    .addComponent(tahunMobilTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(hargaMobilTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
@@ -175,9 +200,9 @@ public class FormAdmin extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12))
         );
@@ -185,79 +210,98 @@ public class FormAdmin extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    public String getNamaAdmin() {
-        return namaAdminTextField.getText();
+    public String getMerkMobil() {
+        return merkMobilTextField.getText();
     }
     
-    public void setNamaAdmin(String nama) {
-        namaAdminTextField.setText(nama);
+    public void setMerkMobil(String merk) {
+        merkMobilTextField.setText(merk);
     }
     
-    public String getUsername() {
-        return usernameTextField.getText();
+    public String getTahunMobil() {
+        return tahunMobilTextField.getText();
     }
     
-    public void setUsername(String username) {
-        usernameTextField.setText(username);
+    public void setTahunMobil(String tahun) {
+        tahunMobilTextField.setText(tahun);
     }
     
-    public String getPassword() {
-        return new String(passwordField.getPassword());
+    public String getHargaMobil() {
+        return hargaMobilTextField.getText();
     }
     
-    public void setPassword(String password) {
-        passwordField.setText(password);
+    public void setHargaMobil(String harga) {
+        hargaMobilTextField.setText(harga);
     }
+    
+    public String getKodeMobil() {
+        return kodeMobilTextField.getText();
+    }
+    
+    public void setKodeMobil(String username) {
+        kodeMobilTextField.setText(username);
+    }
+    
     
     private void tutupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tutupButtonActionPerformed
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_tutupButtonActionPerformed
 
-    private void usernameTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usernameTextFieldKeyPressed
+    private void kodeMobilTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_kodeMobilTextFieldKeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            adminController.cari(usernameTextField);
+            mobilController.cari(kodeMobilTextField);
         }
-    }//GEN-LAST:event_usernameTextFieldKeyPressed
+    }//GEN-LAST:event_kodeMobilTextFieldKeyPressed
 
-    private void namaAdminTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_namaAdminTextFieldKeyPressed
+    private void merkMobilTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_merkMobilTextFieldKeyPressed
         // TODO add your handling code here:
-        adminController.setHashed(false);
-    }//GEN-LAST:event_namaAdminTextFieldKeyPressed
+    }//GEN-LAST:event_merkMobilTextFieldKeyPressed
 
     private void lihatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatButtonActionPerformed
         // TODO add your handling code here:
-        adminController.tampilkanFormLihatAdmin();
+        mobilController.tampilkanFormLihatMobil();
     }//GEN-LAST:event_lihatButtonActionPerformed
 
     private void simpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanButtonActionPerformed
         // TODO add your handling code here:
-        adminController.simpan(usernameTextField,
-                namaAdminTextField,
-                passwordField
+        mobilController.simpan(kodeMobilTextField,
+                merkMobilTextField,
+                tahunMobilTextField,
+                hargaMobilTextField
         );
     }//GEN-LAST:event_simpanButtonActionPerformed
 
     private void hapusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusButtonActionPerformed
         // TODO add your handling code here:
-        adminController.hapus(usernameTextField);
+        mobilController.hapus(kodeMobilTextField);
     }//GEN-LAST:event_hapusButtonActionPerformed
+
+    private void tahunMobilTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tahunMobilTextFieldKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tahunMobilTextFieldKeyPressed
+
+    private void hargaMobilTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_hargaMobilTextFieldKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hargaMobilTextFieldKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton hapusButton;
+    private javax.swing.JTextField hargaMobilTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextField kodeMobilTextField;
     private javax.swing.JButton lihatButton;
-    private javax.swing.JTextField namaAdminTextField;
-    private javax.swing.JPasswordField passwordField;
+    private javax.swing.JTextField merkMobilTextField;
     private javax.swing.JButton simpanButton;
+    private javax.swing.JTextField tahunMobilTextField;
     private javax.swing.JButton tutupButton;
-    private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
 
 }

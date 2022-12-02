@@ -19,6 +19,8 @@ import java.util.logging.Logger;
 public class FormUtama extends javax.swing.JFrame {
 
     public static FormAdmin formAdmin;
+    public static FormMobil formMobil;
+
     private final FormDeskripsi formDeskripsi = new FormDeskripsi(this, true);
     private final FormLogin formLogin = new FormLogin(this, true);
 
@@ -178,13 +180,13 @@ public class FormUtama extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void setEnableMenu(boolean aktif) {
         masterDataMenu.setEnabled(aktif);
         transaksiMenu.setEnabled(aktif);
         laporanMenu.setEnabled(aktif);
     }
-    
+
     private void setUkuranLokasiFrame(double skala, boolean tengah) {
         Dimension dimensi = Toolkit.getDefaultToolkit().getScreenSize();
         setSize((int) (skala * dimensi.getWidth()), (int) (skala * dimensi.getHeight()));
@@ -216,17 +218,28 @@ public class FormUtama extends javax.swing.JFrame {
     }//GEN-LAST:event_adminMenuItemActionPerformed
 
     private void mobilMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mobilMenuItemActionPerformed
-       
+        // TODO add your handling code here:
+        if ((formMobil != null) && formMobil.isVisible()) {
+            try {
+                formMobil.setSelected(true);
+            } catch (PropertyVetoException ex) {
+
+            }
+        } else {
+            formMobil = new FormMobil();
+            mdiDesktopPane.add(formMobil);
+            formMobil.setVisible(true);
+        }
     }//GEN-LAST:event_mobilMenuItemActionPerformed
 
     private void transaksiMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiMenuItemActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_transaksiMenuItemActionPerformed
 
     private void transaksiLaporanMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiLaporanMenuItemActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_transaksiLaporanMenuItemActionPerformed
 
     private void deskripsiMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deskripsiMenuItemActionPerformed
