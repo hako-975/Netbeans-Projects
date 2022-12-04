@@ -20,6 +20,8 @@ public class FormUtama extends javax.swing.JFrame {
 
     public static FormAdmin formAdmin;
     public static FormMobil formMobil;
+    public static FormPembeli formPembeli;
+    public static FormTransaksi formTransaksi;
 
     private final FormDeskripsi formDeskripsi = new FormDeskripsi(this, true);
     private final FormLogin formLogin = new FormLogin(this, true);
@@ -71,7 +73,7 @@ public class FormUtama extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Aplikasi Administrasi Nilai");
+        setTitle("Aplikasi Penjualan Mobil");
 
         javax.swing.GroupLayout mdiDesktopPaneLayout = new javax.swing.GroupLayout(mdiDesktopPane);
         mdiDesktopPane.setLayout(mdiDesktopPaneLayout);
@@ -234,7 +236,17 @@ public class FormUtama extends javax.swing.JFrame {
 
     private void transaksiMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiMenuItemActionPerformed
         // TODO add your handling code here:
+        if ((formTransaksi != null) && formTransaksi.isVisible()) {
+            try {
+                formTransaksi.setSelected(true);
+            } catch (PropertyVetoException ex) {
 
+            }
+        } else {
+            formTransaksi = new FormTransaksi();
+            mdiDesktopPane.add(formTransaksi);
+            formTransaksi.setVisible(true);
+        }
     }//GEN-LAST:event_transaksiMenuItemActionPerformed
 
     private void transaksiLaporanMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiLaporanMenuItemActionPerformed
@@ -265,6 +277,17 @@ public class FormUtama extends javax.swing.JFrame {
 
     private void pembeliMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pembeliMenuItemActionPerformed
         // TODO add your handling code here:
+        if ((formPembeli != null) && formPembeli.isVisible()) {
+            try {
+                formPembeli.setSelected(true);
+            } catch (PropertyVetoException ex) {
+
+            }
+        } else {
+            formPembeli = new FormPembeli();
+            mdiDesktopPane.add(formPembeli);
+            formPembeli.setVisible(true);
+        }
     }//GEN-LAST:event_pembeliMenuItemActionPerformed
 
     /**

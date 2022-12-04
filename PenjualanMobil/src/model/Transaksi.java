@@ -15,14 +15,38 @@ import view.PesanDialog;
  *
  * @author 4R135
  */
-public class Mobil {
+public class Transaksi {
 
-    private String kodeMobil, merkMobil, tahunMobil, hargaMobil;
+    private String kodeTransaksi, tglTransaksi, nikPembeli, kodeMobil, kodeAdmin, totalHarga, bayar, kembalian;
 
     private String pesan;
     private Object[][] list;
     private final Koneksi koneksi = new Koneksi();
     private final PesanDialog pesanDialog = new PesanDialog();
+
+    public String getKodeTransaksi() {
+        return kodeTransaksi;
+    }
+
+    public void setKodeTransaksi(String kodeTransaksi) {
+        this.kodeTransaksi = kodeTransaksi;
+    }
+
+    public String getTglTransaksi() {
+        return tglTransaksi;
+    }
+
+    public void setTglTransaksi(String tglTransaksi) {
+        this.tglTransaksi = tglTransaksi;
+    }
+
+    public String getNikPembeli() {
+        return nikPembeli;
+    }
+
+    public void setNikPembeli(String nikPembeli) {
+        this.nikPembeli = nikPembeli;
+    }
 
     public String getKodeMobil() {
         return kodeMobil;
@@ -32,28 +56,36 @@ public class Mobil {
         this.kodeMobil = kodeMobil;
     }
 
-    public String getMerkMobil() {
-        return merkMobil;
+    public String getKodeAdmin() {
+        return kodeAdmin;
     }
 
-    public void setMerkMobil(String merkMobil) {
-        this.merkMobil = merkMobil;
+    public void setKodeAdmin(String kodeAdmin) {
+        this.kodeAdmin = kodeAdmin;
     }
 
-    public String getTahunMobil() {
-        return tahunMobil;
+    public String getTotalHarga() {
+        return totalHarga;
     }
 
-    public void setTahunMobil(String tahunMobil) {
-        this.tahunMobil = tahunMobil;
+    public void setTotalHarga(String totalHarga) {
+        this.totalHarga = totalHarga;
     }
 
-    public String getHargaMobil() {
-        return hargaMobil;
+    public String getBayar() {
+        return bayar;
     }
 
-    public void setHargaMobil(String hargaMobil) {
-        this.hargaMobil = hargaMobil;
+    public void setBayar(String bayar) {
+        this.bayar = bayar;
+    }
+
+    public String getKembalian() {
+        return kembalian;
+    }
+
+    public void setKembalian(String kembalian) {
+        this.kembalian = kembalian;
     }
 
     public String getPesan() {
@@ -80,34 +112,51 @@ public class Mobil {
             ResultSet rset;
 
             try {
-                SQLStatemen = "select * from mobil where kodeMobil=?";
+                SQLStatemen = "select * from transaksi where kodeTransaksi=?";
 
                 preparedStatement = connection.prepareStatement(SQLStatemen);
-                preparedStatement.setString(1, kodeMobil);
+                preparedStatement.setString(1, kodeTransaksi);
                 rset = preparedStatement.executeQuery();
 
                 rset.next();
                 if (rset.getRow() > 0) {
-                    if (pesanDialog.tampilkanPilihan("Kode Mobil sudah ada\nApakah data diperbaharui?", "Konfirmasi", new Object[]{"Ya", "Tidak"}) == 0) {
+                    if (pesanDialog.tampilkanPilihan("Kode Transaksi sudah ada\nApakah data diperbaharui?", "Konfirmasi", new Object[]{"Ya", "Tidak"}) == 0) {
                         simpan = true;
-                        SQLStatemen = "update mobil set merkMobil=?, tahunMobil=?, hargaMobil=? where kodeMobil=?";
+                        SQLStatemen = "update transaksi set "
+                                + "tglTransaksi = ?, "
+                                + "nikPembeli = ?, "
+                                + "kodeMobil = ?, "
+                                + "kodeAdmin = ?, "
+                                + "totalHarga = ?, "
+                                + "bayar = ?, "
+                                + "kembalian = ? "
+                                + "where kodeTransaksi=?";
 
                         preparedStatement = connection.prepareStatement(SQLStatemen);
-                        preparedStatement.setString(1, merkMobil);
-                        preparedStatement.setInt(2, Integer.parseInt(tahunMobil));
-                        preparedStatement.setInt(3, Integer.parseInt(hargaMobil));
-                        preparedStatement.setString(4, kodeMobil);
+                        preparedStatement.setString(1, tglTransaksi);
+                        preparedStatement.setString(2, nikPembeli);
+                        preparedStatement.setString(3, kodeMobil);
+                        preparedStatement.setString(4, kodeAdmin);
+                        preparedStatement.setString(5, totalHarga);
+                        preparedStatement.setString(6, bayar);
+                        preparedStatement.setString(7, kembalian);
+                        preparedStatement.setString(8, kodeTransaksi);
 
                         jumlahSimpan = preparedStatement.executeUpdate();
                     }
                 } else {
                     simpan = true;
-                    SQLStatemen = "insert into mobil(merkMobil, tahunMobil, hargaMobil) values (?,?,?)";
+                    SQLStatemen = "insert into transaksi(tglTransaksi, nikPembeli, kodeMobil, kodeAdmin, totalHarga, bayar, kembalian) values (?,?,?,?,?,?,?)";
+
 
                     preparedStatement = connection.prepareStatement(SQLStatemen);
-                    preparedStatement.setString(1, merkMobil);
-                    preparedStatement.setInt(2, Integer.parseInt(tahunMobil));
-                    preparedStatement.setInt(3, Integer.parseInt(hargaMobil));
+                    preparedStatement.setString(1, tglTransaksi);
+                    preparedStatement.setString(2, nikPembeli);
+                    preparedStatement.setString(3, kodeMobil);
+                    preparedStatement.setString(4, kodeAdmin);
+                    preparedStatement.setString(5, totalHarga);
+                    preparedStatement.setString(6, bayar);
+                    preparedStatement.setString(7, kembalian);
 
                     jumlahSimpan = preparedStatement.executeUpdate();
                 }
@@ -115,7 +164,7 @@ public class Mobil {
                 if (simpan) {
                     if (jumlahSimpan < 1) {
                         adaKesalahan = true;
-                        pesan = "Gagal menyimpan data mobil";
+                        pesan = "Gagal menyimpan data transaksi";
                     }
                 }
 
@@ -124,46 +173,55 @@ public class Mobil {
                 connection.close();
             } catch (SQLException ex) {
                 adaKesalahan = true;
-                pesan = "Tidak dapat membuka tabel mobil\n" + ex + "\n" + SQLStatemen;
+                pesan = "Tidak dapat membuka tabel transaksi\n" + ex + "\n" + SQLStatemen;
             }
         } else {
             adaKesalahan = true;
             pesan = "Tidak dapat melakukan koneksi ke server\n" + koneksi.getPesanKesalahan();
         }
-        
-        this.kodeMobil = "";
-        
+
+        this.kodeTransaksi = "";
+
         return !adaKesalahan;
     }
 
-    public boolean baca(String kodeMobil) {
+    public boolean baca(String kodeTransaksi) {
         boolean adaKesalahan = false;
         Connection connection;
 
+        this.kodeTransaksi = "";
+        this.tglTransaksi = "";
+        this.nikPembeli = "";
         this.kodeMobil = "";
-        this.merkMobil = "";
-        this.tahunMobil = "";
-        this.hargaMobil = "";
+        this.kodeAdmin = "";
+        this.totalHarga = "";
+        this.bayar = "";
+        this.kembalian = "";
 
         if ((connection = koneksi.getConnection()) != null) {
             PreparedStatement preparedStatement;
             ResultSet rset;
 
             try {
-                String SQLStatemen = "select * from mobil where kodeMobil=?";
+                String SQLStatemen = "select * from transaksi where kodeTransaksi=?";
                 preparedStatement = connection.prepareStatement(SQLStatemen);
-                preparedStatement.setString(1, kodeMobil);
+                preparedStatement.setString(1, kodeTransaksi);
                 rset = preparedStatement.executeQuery();
 
                 rset.next();
                 if (rset.getRow() > 0) {
+                    this.kodeTransaksi = rset.getString("kodeTransaksi");
+                    this.kodeTransaksi = rset.getString("kodeTransaksi");
+                    this.tglTransaksi = rset.getString("tglTransaksi");
+                    this.nikPembeli = rset.getString("nikPembeli");
                     this.kodeMobil = rset.getString("kodeMobil");
-                    this.merkMobil = rset.getString("merkMobil");
-                    this.tahunMobil = rset.getString("tahunMobil");
-                    this.hargaMobil = rset.getString("hargaMobil");
+                    this.kodeAdmin = rset.getString("kodeAdmin");
+                    this.totalHarga = rset.getString("totalHarga");
+                    this.bayar = rset.getString("bayar");
+                    this.kembalian = rset.getString("kembalian");
                 } else {
                     adaKesalahan = true;
-                    pesan = "Kode Mobil \"" + kodeMobil + "\" tidak ditemukan";
+                    pesan = "Kode Transaksi \"" + kodeTransaksi + "\" tidak ditemukan";
                 }
 
                 preparedStatement.close();
@@ -171,13 +229,13 @@ public class Mobil {
                 connection.close();
             } catch (SQLException ex) {
                 adaKesalahan = true;
-                pesan = "Tidak dapat membuka tabel mobil\n" + ex;
+                pesan = "Tidak dapat membuka tabel transaksi\n" + ex;
             }
         } else {
             adaKesalahan = true;
             pesan = "Tidak dapat melakukan koneksi ke server\n" + koneksi.getPesanKesalahan();
         }
-        
+
         return !adaKesalahan;
     }
 
@@ -192,7 +250,7 @@ public class Mobil {
             ResultSet rset;
 
             try {
-                SQLStatemen = "select kodeMobil, merkMobil, tahunMobil, hargaMobil from mobil";
+                SQLStatemen = "select * from transaksi";
                 sta = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 rset = sta.executeQuery(SQLStatemen);
 
@@ -203,7 +261,16 @@ public class Mobil {
                     rset.first();
                     int i = 0;
                     do {
-                        list[i] = new Object[]{rset.getString("kodeMobil"), rset.getString("merkMobil"), rset.getString("tahunMobil"), rset.getString("hargaMobil")};
+                        list[i] = new Object[]{
+                            rset.getString("kodeTransaksi"),
+                            rset.getString("tglTransaksi"),
+                            rset.getString("nikPembeli"),
+                            rset.getString("kodeMobil"),
+                            rset.getString("kodeAdmin"),
+                            rset.getString("totalHarga"),
+                            rset.getString("bayar"),
+                            rset.getString("kembalian")
+                        };
                         i++;
                     } while (rset.next());
                 }
@@ -222,7 +289,7 @@ public class Mobil {
         return !adaKesalahan;
     }
 
-    public boolean hapus(String kodeMobil) {
+    public boolean hapus(String kodeTransaksi) {
         boolean adaKesalahan = false;
         Connection connection;
 
@@ -232,13 +299,13 @@ public class Mobil {
             PreparedStatement preparedStatement;
 
             try {
-                SQLStatemen = "delete from mobil where kodeMobil=?";
+                SQLStatemen = "delete from transaksi where kodeTransaksi=?";
                 preparedStatement = connection.prepareStatement(SQLStatemen);
-                preparedStatement.setString(1, kodeMobil);
+                preparedStatement.setString(1, kodeTransaksi);
                 jumlahHapus = preparedStatement.executeUpdate();
 
                 if (jumlahHapus < 1) {
-                    pesan = "Data mobil dengan KodeMobil " + kodeMobil + " tidak ditemukan";
+                    pesan = "Data transaksi dengan KodeTransaksi " + kodeTransaksi + " tidak ditemukan";
                     adaKesalahan = true;
                 }
 
@@ -246,13 +313,13 @@ public class Mobil {
                 connection.close();
             } catch (SQLException ex) {
                 adaKesalahan = true;
-                pesan = "Tidak dapat membuka tabel mobil\n" + ex;
+                pesan = "Tidak dapat membuka tabel transaksi\n" + ex;
             }
         } else {
             adaKesalahan = true;
             pesan = "Tidak dapat melakukan koneksi ke server\n" + koneksi.getPesanKesalahan();
         }
-        
+
         return !adaKesalahan;
     }
 }

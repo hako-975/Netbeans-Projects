@@ -15,48 +15,49 @@ import view.PesanDialog;
  *
  * @author 4R135
  */
-public class Admin {
+public class Pembeli {
 
-    private String kodeAdmin, username, password, namaAdmin;
+    private String nikPembeli, namaPembeli, noTeleponPembeli, alamatPembeli;
+
     private String pesan;
     private Object[][] list;
     private final Koneksi koneksi = new Koneksi();
     private final PesanDialog pesanDialog = new PesanDialog();
 
-    public String getKodeAdmin() {
-        return kodeAdmin;
+    public String getNikPembeli() {
+        return nikPembeli;
     }
 
-    public void setKodeAdmin(String kodeAdmin) {
-        this.kodeAdmin = kodeAdmin;
+    public void setNikPembeli(String nikPembeli) {
+        this.nikPembeli = nikPembeli;
     }
 
-    public String getUsername() {
-        return username;
+    public String getNamaPembeli() {
+        return namaPembeli;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setNamaPembeli(String namaPembeli) {
+        this.namaPembeli = namaPembeli;
     }
 
-    public String getNama_admin() {
-        return namaAdmin;
+    public String getNoTeleponPembeli() {
+        return noTeleponPembeli;
     }
 
-    public void setNama_admin(String namaAdmin) {
-        this.namaAdmin = namaAdmin;
+    public void setNoTeleponPembeli(String noTeleponPembeli) {
+        this.noTeleponPembeli = noTeleponPembeli;
+    }
+
+    public String getAlamatPembeli() {
+        return alamatPembeli;
+    }
+
+    public void setAlamatPembeli(String alamatPembeli) {
+        this.alamatPembeli = alamatPembeli;
     }
 
     public String getPesan() {
         return pesan;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public Object[][] getList() {
@@ -79,32 +80,35 @@ public class Admin {
             ResultSet rset;
 
             try {
-                SQLStatemen = "select * from admin where username=?";
+                SQLStatemen = "select * from pembeli where nikPembeli=?";
 
                 preparedStatement = connection.prepareStatement(SQLStatemen);
-                preparedStatement.setString(1, username);
+                preparedStatement.setString(1, nikPembeli);
                 rset = preparedStatement.executeQuery();
 
                 rset.next();
                 if (rset.getRow() > 0) {
-                    if (pesanDialog.tampilkanPilihan("Username sudah ada\nApakah data diperbaharui?", "Konfirmasi", new Object[]{"Ya", "Tidak"}) == 0) {
+                    if (pesanDialog.tampilkanPilihan("Nik Pembeli sudah ada\nApakah data diperbaharui?", "Konfirmasi", new Object[]{"Ya", "Tidak"}) == 0) {
                         simpan = true;
-                        SQLStatemen = "update admin set namaAdmin=? where username=?";
+                        SQLStatemen = "update pembeli set namaPembeli=?, noTeleponPembeli=?, alamatPembeli=? where nikPembeli=?";
 
                         preparedStatement = connection.prepareStatement(SQLStatemen);
-                        preparedStatement.setString(1, namaAdmin);
-                        preparedStatement.setString(2, username);
+                        preparedStatement.setString(1, namaPembeli);
+                        preparedStatement.setString(2, noTeleponPembeli);
+                        preparedStatement.setString(3, alamatPembeli);
+                        preparedStatement.setString(4, nikPembeli);
 
                         jumlahSimpan = preparedStatement.executeUpdate();
                     }
                 } else {
                     simpan = true;
-                    SQLStatemen = "insert into admin(username, password, namaAdmin) values (?,?,?)";
+                    SQLStatemen = "insert into pembeli(nikPembeli, namaPembeli, noTeleponPembeli, alamatPembeli) values (?,?,?,?)";
 
                     preparedStatement = connection.prepareStatement(SQLStatemen);
-                    preparedStatement.setString(1, username);
-                    preparedStatement.setString(2, password);
-                    preparedStatement.setString(3, namaAdmin);
+                    preparedStatement.setString(1, nikPembeli);
+                    preparedStatement.setString(2, namaPembeli);
+                    preparedStatement.setString(3, noTeleponPembeli);
+                    preparedStatement.setString(4, alamatPembeli);
 
                     jumlahSimpan = preparedStatement.executeUpdate();
                 }
@@ -112,7 +116,7 @@ public class Admin {
                 if (simpan) {
                     if (jumlahSimpan < 1) {
                         adaKesalahan = true;
-                        pesan = "Gagal menyimpan data admin";
+                        pesan = "Gagal menyimpan data pembeli";
                     }
                 }
 
@@ -121,7 +125,7 @@ public class Admin {
                 connection.close();
             } catch (SQLException ex) {
                 adaKesalahan = true;
-                pesan = "Tidak dapat membuka tabel admin\n" + ex + "\n" + SQLStatemen;
+                pesan = "Tidak dapat membuka tabel pembeli\n" + ex + "\n" + SQLStatemen;
             }
         } else {
             adaKesalahan = true;
@@ -131,40 +135,42 @@ public class Admin {
         return !adaKesalahan;
     }
 
-    public boolean baca(String username) {
+    public boolean baca(String nikPembeli) {
         boolean adaKesalahan = false;
         Connection connection;
-        this.username = "";
-        this.password = "";
-        this.namaAdmin = "";
+
+        this.nikPembeli = "";
+        this.namaPembeli = "";
+        this.noTeleponPembeli = "";
+        this.alamatPembeli = "";
 
         if ((connection = koneksi.getConnection()) != null) {
             PreparedStatement preparedStatement;
             ResultSet rset;
 
             try {
-                String SQLStatemen = "select * from admin where username=?";
+                String SQLStatemen = "select * from pembeli where nikPembeli=?";
                 preparedStatement = connection.prepareStatement(SQLStatemen);
-                preparedStatement.setString(1, username);
+                preparedStatement.setString(1, nikPembeli);
                 rset = preparedStatement.executeQuery();
 
                 rset.next();
                 if (rset.getRow() > 0) {
-                    this.kodeAdmin = rset.getString("kodeAdmin");
-                    this.username = rset.getString("username");
-                    this.password = rset.getString("password");
-                    this.namaAdmin = rset.getString("namaAdmin");
+                    this.nikPembeli = rset.getString("nikPembeli");
+                    this.namaPembeli = rset.getString("namaPembeli");
+                    this.noTeleponPembeli = rset.getString("noTeleponPembeli");
+                    this.alamatPembeli = rset.getString("alamatPembeli");
                 } else {
                     adaKesalahan = true;
-                    pesan = "Username \"" + username + "\" tidak ditemukan";
+                    pesan = "Nik Pembeli \"" + nikPembeli + "\" tidak ditemukan";
                 }
-                
+
                 preparedStatement.close();
                 rset.close();
                 connection.close();
             } catch (SQLException ex) {
                 adaKesalahan = true;
-                pesan = "Tidak dapat membuka tabel admin\n" + ex;
+                pesan = "Tidak dapat membuka tabel pembeli\n" + ex;
             }
         } else {
             adaKesalahan = true;
@@ -185,7 +191,7 @@ public class Admin {
             ResultSet rset;
 
             try {
-                SQLStatemen = "select username, namaAdmin from admin";
+                SQLStatemen = "select nikPembeli, namaPembeli, noTeleponPembeli, alamatPembeli from pembeli";
                 sta = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 rset = sta.executeQuery(SQLStatemen);
 
@@ -196,7 +202,7 @@ public class Admin {
                     rset.first();
                     int i = 0;
                     do {
-                        list[i] = new Object[]{rset.getString("username"), rset.getString("namaAdmin")};
+                        list[i] = new Object[]{rset.getString("nikPembeli"), rset.getString("namaPembeli"), rset.getString("noTeleponPembeli"), rset.getString("alamatPembeli")};
                         i++;
                     } while (rset.next());
                 }
@@ -212,11 +218,10 @@ public class Admin {
             adaKesalahan = true;
             pesan = "Tidak dapat melakukan koneksi ke server\n" + koneksi.getPesanKesalahan();
         }
-
         return !adaKesalahan;
     }
 
-    public boolean hapus(String username) {
+    public boolean hapus(String nikPembeli) {
         boolean adaKesalahan = false;
         Connection connection;
 
@@ -226,13 +231,13 @@ public class Admin {
             PreparedStatement preparedStatement;
 
             try {
-                SQLStatemen = "delete from admin where username=?";
+                SQLStatemen = "delete from pembeli where nikPembeli=?";
                 preparedStatement = connection.prepareStatement(SQLStatemen);
-                preparedStatement.setString(1, username);
+                preparedStatement.setString(1, nikPembeli);
                 jumlahHapus = preparedStatement.executeUpdate();
 
                 if (jumlahHapus < 1) {
-                    pesan = "Data admin dengan Username " + username + " tidak ditemukan";
+                    pesan = "Data pembeli dengan NikPembeli " + nikPembeli + " tidak ditemukan";
                     adaKesalahan = true;
                 }
 
@@ -240,7 +245,7 @@ public class Admin {
                 connection.close();
             } catch (SQLException ex) {
                 adaKesalahan = true;
-                pesan = "Tidak dapat membuka tabel admin\n" + ex;
+                pesan = "Tidak dapat membuka tabel pembeli\n" + ex;
             }
         } else {
             adaKesalahan = true;

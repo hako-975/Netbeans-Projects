@@ -34,7 +34,6 @@ public class LoginController {
 
                     if (admin.getPassword().equalsIgnoreCase(hashedInputPassword)) {
                         valid = true;
-                        FormLogin.tipe = "Mahasiswa";
                     } else {
                         userIdSalah = true;
                     }

@@ -5,7 +5,6 @@
 package controller;
 
 import javax.swing.JOptionPane;
-import model.Enkripsi;
 import model.Mobil;
 import view.FormLihatMobil;
 import view.FormUtama;
@@ -20,30 +19,24 @@ public class MobilController {
     private FormLihatMobil formLihatMobil;
 
     public void simpan(
-            javax.swing.JTextField kodeMobilTextField,
             javax.swing.JTextField merkMobilTextField,
             javax.swing.JTextField tahunMobilTextField,
             javax.swing.JTextField hargaMobilTextField
     ) {
-        if (!kodeMobilTextField.getText().equals("")) {
-            mobil.setKodeMobil(kodeMobilTextField.getText());
-            mobil.setMerkMobil(merkMobilTextField.getText());
-            mobil.setTahunMobil(tahunMobilTextField.getText());
-            mobil.setHargaMobil(hargaMobilTextField.getText());
+        mobil.setMerkMobil(merkMobilTextField.getText());
+        mobil.setTahunMobil(tahunMobilTextField.getText());
+        mobil.setHargaMobil(hargaMobilTextField.getText());
 
-            if (mobil.simpan()) {
-                FormUtama.formMobil.setKodeMobil("");
-                FormUtama.formMobil.setMerkMobil("");
-                FormUtama.formMobil.setTahunMobil("");
-                FormUtama.formMobil.setHargaMobil("");
+        if (mobil.simpan()) {
+            FormUtama.formMobil.setKodeMobil("");
+            FormUtama.formMobil.setMerkMobil("");
+            FormUtama.formMobil.setTahunMobil("");
+            FormUtama.formMobil.setHargaMobil("");
 
-            } else {
-                if (mobil.getPesan().length() > 0) {
-                    JOptionPane.showMessageDialog(null, mobil.getPesan(), "Kesalahan", JOptionPane.ERROR_MESSAGE);
-                }
-            }
         } else {
-            JOptionPane.showMessageDialog(null, "Username tidak boleh kosong", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+            if (mobil.getPesan().length() > 0) {
+                JOptionPane.showMessageDialog(null, mobil.getPesan(), "Kesalahan", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 

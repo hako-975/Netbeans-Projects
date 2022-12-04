@@ -12,17 +12,17 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Alvin Hendrawan
  */
-public class FormLihatMobil extends javax.swing.JDialog {
-    private final DefaultTableModel mobilTableModel;
-    private String kodeMobilDipilih;
+public class FormLihatPembeli extends javax.swing.JDialog {
+    private final DefaultTableModel pembeliTableModel;
+    private String kodePembeliDipilih;
     
     /**
      * Creates new form FormLihatAdmin
      */
-    public FormLihatMobil(java.awt.Frame parent, boolean modal) {
+    public FormLihatPembeli(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        mobilTableModel = (DefaultTableModel) mobilTable.getModel();
+        pembeliTableModel = (DefaultTableModel) pembeliTable.getModel();
     }
 
     /**
@@ -36,7 +36,7 @@ public class FormLihatMobil extends javax.swing.JDialog {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        mobilTable = new javax.swing.JTable();
+        pembeliTable = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         pilihButton = new javax.swing.JButton();
         tutupButton = new javax.swing.JButton();
@@ -50,14 +50,14 @@ public class FormLihatMobil extends javax.swing.JDialog {
         });
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Mobil"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Pembeli"));
 
-        mobilTable.setModel(new javax.swing.table.DefaultTableModel(
+        pembeliTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Kode Mobil", "Merk Mobil", "Tahun Mobil", "Harga Mobil"
+                "NIK Pembeli", "Nama Pembeli", "No. Telepon Pembeli", "Alamat Pembeli"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -68,7 +68,7 @@ public class FormLihatMobil extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(mobilTable);
+        jScrollPane1.setViewportView(pembeliTable);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -149,16 +149,16 @@ public class FormLihatMobil extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
     
     public void tampilkanData(Object[][] list) {
-        mobilTableModel.setRowCount(0);
+        pembeliTableModel.setRowCount(0);
         if ((list != null) && (list.length > 0)) {
             for (int i = 0; i < list.length; i++) {
-                mobilTableModel.addRow(list[i]);
+                pembeliTableModel.addRow(list[i]);
             }
         }
     }
     
-    public String getKodeMobilDipilih() {
-        return kodeMobilDipilih;
+    public String getKodePembeliDipilih() {
+        return kodePembeliDipilih;
     }
     private void tutupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tutupButtonActionPerformed
         // TODO add your handling code here:
@@ -167,14 +167,14 @@ public class FormLihatMobil extends javax.swing.JDialog {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-        kodeMobilDipilih = "";
+        kodePembeliDipilih = "";
     }//GEN-LAST:event_formWindowActivated
 
     private void pilihButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilihButtonActionPerformed
         // TODO add your handling code here:
-        if (mobilTable.getSelectedRowCount() > 0) {
-            kodeMobilDipilih = mobilTable.getValueAt(
-                    mobilTable.getSelectedRow(), 0).toString();
+        if (pembeliTable.getSelectedRowCount() > 0) {
+            kodePembeliDipilih = pembeliTable.getValueAt(
+                    pembeliTable.getSelectedRow(), 0).toString();
             dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Belum ada yang dipilih");
@@ -198,14 +198,18 @@ public class FormLihatMobil extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormLihatMobil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormLihatPembeli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormLihatMobil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormLihatPembeli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormLihatMobil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormLihatPembeli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormLihatMobil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormLihatPembeli.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -214,7 +218,7 @@ public class FormLihatMobil extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                FormLihatMobil dialog = new FormLihatMobil(new javax.swing.JFrame(), true);
+                FormLihatPembeli dialog = new FormLihatPembeli(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -230,7 +234,7 @@ public class FormLihatMobil extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable mobilTable;
+    private javax.swing.JTable pembeliTable;
     private javax.swing.JButton pilihButton;
     private javax.swing.JButton tutupButton;
     // End of variables declaration//GEN-END:variables

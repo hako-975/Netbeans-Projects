@@ -12,8 +12,7 @@ import controller.LoginController;
  */
 public class FormLogin extends javax.swing.JDialog {
     private final LoginController loginController = new LoginController();
-    private String userLogin;
-    public static String tipe;
+    public static String userLogin;
 
     /**
      * Creates new form FormLogin

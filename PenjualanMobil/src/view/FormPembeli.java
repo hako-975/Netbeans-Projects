@@ -5,20 +5,20 @@
  */
 package view;
 
-import controller.MobilController;
+import controller.PembeliController;
 import java.awt.event.KeyEvent;
 
 /**
  *
  * @author Alvin Hendrawan
  */
-public class FormMobil extends javax.swing.JInternalFrame {
-    private final MobilController mobilController = 
-            new MobilController();
+public class FormPembeli extends javax.swing.JInternalFrame {
+    private final PembeliController pembeliController = 
+            new PembeliController();
     /**
      * Creates new form FormAdmin
      */
-    public FormMobil() {
+    public FormPembeli() {
         initComponents();
     }
 
@@ -34,42 +34,42 @@ public class FormMobil extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        kodeMobilTextField = new javax.swing.JTextField();
-        merkMobilTextField = new javax.swing.JTextField();
+        nikPembeliTextField = new javax.swing.JTextField();
+        namaPembeliTextField = new javax.swing.JTextField();
         lihatButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        tahunMobilTextField = new javax.swing.JTextField();
+        noTeleponPembeliTextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        hargaMobilTextField = new javax.swing.JTextField();
+        alamatPembeliTextField = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         simpanButton = new javax.swing.JButton();
         hapusButton = new javax.swing.JButton();
         tutupButton = new javax.swing.JButton();
 
-        setTitle("Master Data Mobil");
+        setTitle("Master Data Pembeli");
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Mobil"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Pembeli"));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setText("Kode Mobil");
+        jLabel1.setText("NIK Pembeli");
 
-        jLabel2.setText("Merk Mobil");
+        jLabel2.setText("Nama Pembeli");
 
-        kodeMobilTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        nikPembeliTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                kodeMobilTextFieldKeyPressed(evt);
+                nikPembeliTextFieldKeyPressed(evt);
             }
         });
 
-        merkMobilTextField.addActionListener(new java.awt.event.ActionListener() {
+        namaPembeliTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                merkMobilTextFieldActionPerformed(evt);
+                namaPembeliTextFieldActionPerformed(evt);
             }
         });
-        merkMobilTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        namaPembeliTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                merkMobilTextFieldKeyPressed(evt);
+                namaPembeliTextFieldKeyPressed(evt);
             }
         });
 
@@ -80,19 +80,19 @@ public class FormMobil extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel3.setText("Tahun Mobil");
+        jLabel3.setText("No. Telepon Pembeli");
 
-        tahunMobilTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        noTeleponPembeliTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                tahunMobilTextFieldKeyPressed(evt);
+                noTeleponPembeliTextFieldKeyPressed(evt);
             }
         });
 
-        jLabel4.setText("Harga Mobil");
+        jLabel4.setText("Alamat Pembeli");
 
-        hargaMobilTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        alamatPembeliTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                hargaMobilTextFieldKeyPressed(evt);
+                alamatPembeliTextFieldKeyPressed(evt);
             }
         });
 
@@ -113,14 +113,14 @@ public class FormMobil extends javax.swing.JInternalFrame {
                             .addComponent(jLabel3))
                         .addGap(37, 37, 37)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(merkMobilTextField)
-                            .addComponent(tahunMobilTextField)
+                            .addComponent(namaPembeliTextField)
+                            .addComponent(noTeleponPembeliTextField)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(kodeMobilTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(nikPembeliTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(lihatButton)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(hargaMobilTextField))
+                            .addComponent(alamatPembeliTextField))
                         .addGap(95, 95, 95))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -130,19 +130,19 @@ public class FormMobil extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(lihatButton)
-                    .addComponent(kodeMobilTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nikPembeliTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(merkMobilTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(namaPembeliTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(tahunMobilTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(noTeleponPembeliTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(hargaMobilTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(alamatPembeliTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
@@ -217,36 +217,36 @@ public class FormMobil extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    public String getMerkMobil() {
-        return merkMobilTextField.getText();
+    public String getNamaPembeli() {
+        return namaPembeliTextField.getText();
     }
     
-    public void setMerkMobil(String merk) {
-        merkMobilTextField.setText(merk);
+    public void setNamaPembeli(String nama) {
+        namaPembeliTextField.setText(nama);
     }
     
-    public String getTahunMobil() {
-        return tahunMobilTextField.getText();
+    public String getNoTeleponPembeli() {
+        return noTeleponPembeliTextField.getText();
     }
     
-    public void setTahunMobil(String tahun) {
-        tahunMobilTextField.setText(tahun);
+    public void setNoTeleponPembeli(String noTelepon) {
+        noTeleponPembeliTextField.setText(noTelepon);
     }
     
-    public String getHargaMobil() {
-        return hargaMobilTextField.getText();
+    public String getAlamatPembeli() {
+        return alamatPembeliTextField.getText();
     }
     
-    public void setHargaMobil(String harga) {
-        hargaMobilTextField.setText(harga);
+    public void setAlamatPembeli(String alamat) {
+        alamatPembeliTextField.setText(alamat);
     }
     
-    public String getKodeMobil() {
-        return kodeMobilTextField.getText();
+    public String getNikPembeli() {
+        return nikPembeliTextField.getText();
     }
     
-    public void setKodeMobil(String username) {
-        kodeMobilTextField.setText(username);
+    public void setNikPembeli(String username) {
+        nikPembeliTextField.setText(username);
     }
     
     
@@ -255,63 +255,64 @@ public class FormMobil extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_tutupButtonActionPerformed
 
-    private void kodeMobilTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_kodeMobilTextFieldKeyPressed
+    private void nikPembeliTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nikPembeliTextFieldKeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            mobilController.cari(kodeMobilTextField);
+            pembeliController.cari(nikPembeliTextField);
         }
-    }//GEN-LAST:event_kodeMobilTextFieldKeyPressed
+    }//GEN-LAST:event_nikPembeliTextFieldKeyPressed
 
-    private void merkMobilTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_merkMobilTextFieldKeyPressed
+    private void namaPembeliTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_namaPembeliTextFieldKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_merkMobilTextFieldKeyPressed
+    }//GEN-LAST:event_namaPembeliTextFieldKeyPressed
 
     private void lihatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatButtonActionPerformed
         // TODO add your handling code here:
-        mobilController.tampilkanFormLihatMobil();
+        pembeliController.tampilkanFormLihatPembeli();
     }//GEN-LAST:event_lihatButtonActionPerformed
 
     private void simpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanButtonActionPerformed
         // TODO add your handling code here:
-        mobilController.simpan(
-                merkMobilTextField,
-                tahunMobilTextField,
-                hargaMobilTextField
+        pembeliController.simpan(
+                nikPembeliTextField,
+                namaPembeliTextField,
+                noTeleponPembeliTextField,
+                alamatPembeliTextField
         );
     }//GEN-LAST:event_simpanButtonActionPerformed
 
     private void hapusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusButtonActionPerformed
         // TODO add your handling code here:
-        mobilController.hapus(kodeMobilTextField);
+        pembeliController.hapus(nikPembeliTextField);
     }//GEN-LAST:event_hapusButtonActionPerformed
 
-    private void tahunMobilTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tahunMobilTextFieldKeyPressed
+    private void noTeleponPembeliTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_noTeleponPembeliTextFieldKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tahunMobilTextFieldKeyPressed
+    }//GEN-LAST:event_noTeleponPembeliTextFieldKeyPressed
 
-    private void hargaMobilTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_hargaMobilTextFieldKeyPressed
+    private void alamatPembeliTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alamatPembeliTextFieldKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_hargaMobilTextFieldKeyPressed
+    }//GEN-LAST:event_alamatPembeliTextFieldKeyPressed
 
-    private void merkMobilTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_merkMobilTextFieldActionPerformed
+    private void namaPembeliTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaPembeliTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_merkMobilTextFieldActionPerformed
+    }//GEN-LAST:event_namaPembeliTextFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField alamatPembeliTextField;
     private javax.swing.JButton hapusButton;
-    private javax.swing.JTextField hargaMobilTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField kodeMobilTextField;
     private javax.swing.JButton lihatButton;
-    private javax.swing.JTextField merkMobilTextField;
+    private javax.swing.JTextField namaPembeliTextField;
+    private javax.swing.JTextField nikPembeliTextField;
+    private javax.swing.JTextField noTeleponPembeliTextField;
     private javax.swing.JButton simpanButton;
-    private javax.swing.JTextField tahunMobilTextField;
     private javax.swing.JButton tutupButton;
     // End of variables declaration//GEN-END:variables
 
