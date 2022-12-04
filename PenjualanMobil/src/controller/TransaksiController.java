@@ -130,4 +130,9 @@ public class TransaksiController {
         }
     }
 
+    public void cetakLaporan() {
+        if (!transaksi.cetakLaporan()) {
+            JOptionPane.showMessageDialog(null, transaksi.getPesan(), "Kesalahan", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }

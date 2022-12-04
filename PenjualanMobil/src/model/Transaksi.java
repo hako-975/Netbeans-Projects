@@ -9,6 +9,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JRResultSetDataSource;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import view.PesanDialog;
 
 /**
@@ -147,7 +157,6 @@ public class Transaksi {
                 } else {
                     simpan = true;
                     SQLStatemen = "insert into transaksi(tglTransaksi, nikPembeli, kodeMobil, kodeAdmin, totalHarga, bayar, kembalian) values (?,?,?,?,?,?,?)";
-
 
                     preparedStatement = connection.prepareStatement(SQLStatemen);
                     preparedStatement.setString(1, tglTransaksi);
@@ -314,6 +323,50 @@ public class Transaksi {
             } catch (SQLException ex) {
                 adaKesalahan = true;
                 pesan = "Tidak dapat membuka tabel transaksi\n" + ex;
+            }
+        } else {
+            adaKesalahan = true;
+            pesan = "Tidak dapat melakukan koneksi ke server\n" + koneksi.getPesanKesalahan();
+        }
+
+        return !adaKesalahan;
+    }
+
+    public boolean cetakLaporan() {
+        boolean adaKesalahan = false;
+        Connection connection;
+
+        if ((connection = koneksi.getConnection()) != null) {
+            String SQLStatement;
+            Statement statement;
+            ResultSet resultSet = null;
+
+            try {
+                SQLStatement = " SELECT * FROM transaksi "
+                        + "INNER JOIN mobil ON transaksi.kodeMobil = mobil.kodeMobil "
+                        + "INNER JOIN admin ON transaksi.kodeAdmin = admin.kodeAdmin "
+                        + "INNER JOIN pembeli ON transaksi.nikPembeli = pembeli.nikPembeli";
+
+                SQLStatement = SQLStatement + " ORDER BY transaksi.tglTransaksi DESC";
+
+                statement = connection.createStatement();
+                resultSet = statement.executeQuery(SQLStatement);
+            } catch (SQLException ex) {
+                adaKesalahan = true;
+                pesan = "Tidak dapat membaca data\n" + ex;
+            }
+
+            if (resultSet != null) {
+                try {
+                    JasperDesign disain = JRXmlLoader.load("src/reports/TransaksiReport.jrxml");
+                    JasperReport nilaiLaporan = JasperCompileManager.compileReport(disain);
+                    JRResultSetDataSource resultSetDataSource = new JRResultSetDataSource(resultSet);
+                    JasperPrint cetak = JasperFillManager.fillReport(nilaiLaporan, new HashMap(), resultSetDataSource);
+                    JasperViewer.viewReport(cetak, false);
+                } catch (JRException ex) {
+                    adaKesalahan = true;
+                    pesan = "Tidak dapat mencetak laporan\n" + ex;
+                }
             }
         } else {
             adaKesalahan = true;

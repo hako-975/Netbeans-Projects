@@ -69,12 +69,23 @@ public class FormLihatTransaksi extends javax.swing.JDialog {
             }
         });
         jScrollPane1.setViewportView(transaksiTable);
+        if (transaksiTable.getColumnModel().getColumnCount() > 0) {
+            transaksiTable.getColumnModel().getColumn(0).setMinWidth(75);
+            transaksiTable.getColumnModel().getColumn(0).setPreferredWidth(75);
+            transaksiTable.getColumnModel().getColumn(0).setMaxWidth(75);
+            transaksiTable.getColumnModel().getColumn(3).setMinWidth(75);
+            transaksiTable.getColumnModel().getColumn(3).setPreferredWidth(75);
+            transaksiTable.getColumnModel().getColumn(3).setMaxWidth(75);
+            transaksiTable.getColumnModel().getColumn(4).setMinWidth(75);
+            transaksiTable.getColumnModel().getColumn(4).setPreferredWidth(75);
+            transaksiTable.getColumnModel().getColumn(4).setMaxWidth(75);
+        }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,7 +153,7 @@ public class FormLihatTransaksi extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(616, 355));
+        setSize(new java.awt.Dimension(641, 355));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     

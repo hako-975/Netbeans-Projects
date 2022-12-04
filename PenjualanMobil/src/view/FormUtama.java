@@ -22,6 +22,7 @@ public class FormUtama extends javax.swing.JFrame {
     public static FormMobil formMobil;
     public static FormPembeli formPembeli;
     public static FormTransaksi formTransaksi;
+    public static FormLaporanTransaksi formLaporanTransaksi;
 
     private final FormDeskripsi formDeskripsi = new FormDeskripsi(this, true);
     private final FormLogin formLogin = new FormLogin(this, true);
@@ -251,7 +252,16 @@ public class FormUtama extends javax.swing.JFrame {
 
     private void transaksiLaporanMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiLaporanMenuItemActionPerformed
         // TODO add your handling code here:
-
+        if ((formLaporanTransaksi != null) && formLaporanTransaksi.isVisible()) {
+            try {
+                formLaporanTransaksi.setSelected(true);
+            } catch (PropertyVetoException ex) {
+            }
+        } else {
+            formLaporanTransaksi = new FormLaporanTransaksi();
+            mdiDesktopPane.add(formLaporanTransaksi);
+            formLaporanTransaksi.setVisible(true);
+        }
     }//GEN-LAST:event_transaksiLaporanMenuItemActionPerformed
 
     private void deskripsiMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deskripsiMenuItemActionPerformed
