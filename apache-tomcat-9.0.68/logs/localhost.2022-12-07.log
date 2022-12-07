@@ -1,0 +1,574 @@
+07-Dec-2022 13:44:49.032 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+07-Dec-2022 13:44:49.032 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+07-Dec-2022 13:44:49.035 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@5f683daf')
+07-Dec-2022 15:12:46.607 SEVERE [http-nio-8080-exec-158] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [38] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on tokens, Expression expected instead
+35:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> About</a>
+36:                     </li>
+37:                     <li class="nav-item">
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+
+
+An error occurred at line: [39] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token "<", invalid Expression
+36:                     </li>
+37:                     <li class="nav-item">
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+
+
+An error occurred at line: [40] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token "<", invalid Expression
+37:                     <li class="nav-item">
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+
+
+An error occurred at line: [40] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token(s), misplaced construct(s)
+37:                     <li class="nav-item">
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+
+
+An error occurred at line: [41] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token "class", ) expected
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+44:                             if (statusLogin.equals("1")) {
+
+
+An error occurred at line: [41] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on tokens, Expression expected instead
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+44:                             if (statusLogin.equals("1")) {
+
+
+An error occurred at line: [41] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token(s), misplaced construct(s)
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+44:                             if (statusLogin.equals("1")) {
+
+
+An error occurred at line: [38] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on tokens, delete these tokens
+35:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> About</a>
+36:                     </li>
+37:                     <li class="nav-item">
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+
+
+An error occurred at line: [44] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on tokens, delete these tokens
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+44:                             if (statusLogin.equals("1")) {
+45:                         %>
+46:                         <a class="btn btn-danger" href="<%= baseUrl%>logout.jsp"><i class="bi bi-box-arrow-right"></i> Logout</a>
+47:                         <%
+
+
+An error occurred at line: [48] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token "else", finally expected
+45:                         %>
+46:                         <a class="btn btn-danger" href="<%= baseUrl%>logout.jsp"><i class="bi bi-box-arrow-right"></i> Logout</a>
+47:                         <%
+48:                         } else {
+49:                         %>
+50:                         <a class="btn btn-success" href="<%= baseUrl%>login.jsp"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+51:                         <%
+
+
+An error occurred at line: [206] in the generated java file: [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\work\Catalina\localhost\latihan_project_andri\org\apache\jsp\shared\mainmenu_jsp.java]
+Syntax error on tokens, delete these tokens
+
+An error occurred at line: [206] in the generated java file: [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\work\Catalina\localhost\latihan_project_andri\org\apache\jsp\shared\mainmenu_jsp.java]
+Syntax error on token(s), misplaced construct(s)
+
+An error occurred at line: [206] in the generated java file: [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\work\Catalina\localhost\latihan_project_andri\org\apache\jsp\shared\mainmenu_jsp.java]
+Syntax error, insert "AssignmentOperator Expression" to complete Assignment
+
+An error occurred at line: [206] in the generated java file: [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\work\Catalina\localhost\latihan_project_andri\org\apache\jsp\shared\mainmenu_jsp.java]
+Syntax error, insert ";" to complete Statement
+
+An error occurred at line: [220] in the generated java file: [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\work\Catalina\localhost\latihan_project_andri\org\apache\jsp\shared\mainmenu_jsp.java]
+Syntax error on token "finally", delete this token
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:520)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:397)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:367)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:605)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:379)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:327)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711)
+		at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:578)
+		at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:517)
+		at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:994)
+		at org.apache.jsp.admin_jsp._jspService(admin_jsp.java:129)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:379)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:327)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:748)
+07-Dec-2022 15:12:46.608 SEVERE [http-nio-8080-exec-158] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/latihan_project_andri] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [38] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on tokens, Expression expected instead
+35:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> About</a>
+36:                     </li>
+37:                     <li class="nav-item">
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+
+
+An error occurred at line: [39] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token "<", invalid Expression
+36:                     </li>
+37:                     <li class="nav-item">
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+
+
+An error occurred at line: [40] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token "<", invalid Expression
+37:                     <li class="nav-item">
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+
+
+An error occurred at line: [40] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token(s), misplaced construct(s)
+37:                     <li class="nav-item">
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+
+
+An error occurred at line: [41] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token "class", ) expected
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+44:                             if (statusLogin.equals("1")) {
+
+
+An error occurred at line: [41] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on tokens, Expression expected instead
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+44:                             if (statusLogin.equals("1")) {
+
+
+An error occurred at line: [41] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token(s), misplaced construct(s)
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+44:                             if (statusLogin.equals("1")) {
+
+
+An error occurred at line: [38] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on tokens, delete these tokens
+35:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> About</a>
+36:                     </li>
+37:                     <li class="nav-item">
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+
+
+An error occurred at line: [44] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on tokens, delete these tokens
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+44:                             if (statusLogin.equals("1")) {
+45:                         %>
+46:                         <a class="btn btn-danger" href="<%= baseUrl%>logout.jsp"><i class="bi bi-box-arrow-right"></i> Logout</a>
+47:                         <%
+
+
+An error occurred at line: [48] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token "else", finally expected
+45:                         %>
+46:                         <a class="btn btn-danger" href="<%= baseUrl%>logout.jsp"><i class="bi bi-box-arrow-right"></i> Logout</a>
+47:                         <%
+48:                         } else {
+49:                         %>
+50:                         <a class="btn btn-success" href="<%= baseUrl%>login.jsp"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+51:                         <%
+
+
+An error occurred at line: [206] in the generated java file: [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\work\Catalina\localhost\latihan_project_andri\org\apache\jsp\shared\mainmenu_jsp.java]
+Syntax error on tokens, delete these tokens
+
+An error occurred at line: [206] in the generated java file: [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\work\Catalina\localhost\latihan_project_andri\org\apache\jsp\shared\mainmenu_jsp.java]
+Syntax error on token(s), misplaced construct(s)
+
+An error occurred at line: [206] in the generated java file: [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\work\Catalina\localhost\latihan_project_andri\org\apache\jsp\shared\mainmenu_jsp.java]
+Syntax error, insert "AssignmentOperator Expression" to complete Assignment
+
+An error occurred at line: [206] in the generated java file: [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\work\Catalina\localhost\latihan_project_andri\org\apache\jsp\shared\mainmenu_jsp.java]
+Syntax error, insert ";" to complete Statement
+
+An error occurred at line: [220] in the generated java file: [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\work\Catalina\localhost\latihan_project_andri\org\apache\jsp\shared\mainmenu_jsp.java]
+Syntax error on token "finally", delete this token
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [38] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on tokens, Expression expected instead
+35:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> About</a>
+36:                     </li>
+37:                     <li class="nav-item">
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+
+
+An error occurred at line: [39] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token "<", invalid Expression
+36:                     </li>
+37:                     <li class="nav-item">
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+
+
+An error occurred at line: [40] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token "<", invalid Expression
+37:                     <li class="nav-item">
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+
+
+An error occurred at line: [40] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token(s), misplaced construct(s)
+37:                     <li class="nav-item">
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+
+
+An error occurred at line: [41] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token "class", ) expected
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+44:                             if (statusLogin.equals("1")) {
+
+
+An error occurred at line: [41] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on tokens, Expression expected instead
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+44:                             if (statusLogin.equals("1")) {
+
+
+An error occurred at line: [41] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token(s), misplaced construct(s)
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+44:                             if (statusLogin.equals("1")) {
+
+
+An error occurred at line: [38] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on tokens, delete these tokens
+35:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> About</a>
+36:                     </li>
+37:                     <li class="nav-item">
+38:                         <a class="nav-link text-dark mx-2 px-3 btn btn-light" href="<%= baseUrl%>about.jsp"><i class="bi bi-person"></i> <%= nama% ></a>
+39:                     </li>
+40:                 </ul>
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+
+
+An error occurred at line: [44] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on tokens, delete these tokens
+41:                 <ul class="navbar-nav mb-2 mb-md-0">
+42:                     <li class="nav-item">
+43:                         <%
+44:                             if (statusLogin.equals("1")) {
+45:                         %>
+46:                         <a class="btn btn-danger" href="<%= baseUrl%>logout.jsp"><i class="bi bi-box-arrow-right"></i> Logout</a>
+47:                         <%
+
+
+An error occurred at line: [48] in the jsp file: [/shared/mainmenu.jsp]
+Syntax error on token "else", finally expected
+45:                         %>
+46:                         <a class="btn btn-danger" href="<%= baseUrl%>logout.jsp"><i class="bi bi-box-arrow-right"></i> Logout</a>
+47:                         <%
+48:                         } else {
+49:                         %>
+50:                         <a class="btn btn-success" href="<%= baseUrl%>login.jsp"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+51:                         <%
+
+
+An error occurred at line: [206] in the generated java file: [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\work\Catalina\localhost\latihan_project_andri\org\apache\jsp\shared\mainmenu_jsp.java]
+Syntax error on tokens, delete these tokens
+
+An error occurred at line: [206] in the generated java file: [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\work\Catalina\localhost\latihan_project_andri\org\apache\jsp\shared\mainmenu_jsp.java]
+Syntax error on token(s), misplaced construct(s)
+
+An error occurred at line: [206] in the generated java file: [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\work\Catalina\localhost\latihan_project_andri\org\apache\jsp\shared\mainmenu_jsp.java]
+Syntax error, insert "AssignmentOperator Expression" to complete Assignment
+
+An error occurred at line: [206] in the generated java file: [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\work\Catalina\localhost\latihan_project_andri\org\apache\jsp\shared\mainmenu_jsp.java]
+Syntax error, insert ";" to complete Statement
+
+An error occurred at line: [220] in the generated java file: [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\work\Catalina\localhost\latihan_project_andri\org\apache\jsp\shared\mainmenu_jsp.java]
+Syntax error on token "finally", delete this token
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:520)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:397)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:367)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:605)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:379)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:327)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711)
+		at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:578)
+		at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:517)
+		at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:994)
+		at org.apache.jsp.admin_jsp._jspService(admin_jsp.java:129)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:466)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:379)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:327)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:748)
+07-Dec-2022 15:19:36.559 SEVERE [http-nio-8080-exec-152] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/latihan_project_andri] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/about.jsp]
+baseUrl cannot be resolved to a variable
+15: 
+16:         <jsp:include page="/shared/mainmenu.jsp" />
+17:         
+18:         <img class="mb-4 d-block mx-auto" src="<%= baseUrl %>/media/icon.png" alt="Icon" width="75">
+19: 
+20:         <!-- content -->
+21:         <h1>Tentang Andri Lab</h1>
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/about.jsp]
+baseUrl cannot be resolved to a variable
+15: 
+16:         <jsp:include page="/shared/mainmenu.jsp" />
+17:         
+18:         <img class="mb-4 d-block mx-auto" src="<%= baseUrl %>/media/icon.png" alt="Icon" width="75">
+19: 
+20:         <!-- content -->
+21:         <h1>Tentang Andri Lab</h1>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:520)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:397)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:367)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:605)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:379)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:327)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:748)
+07-Dec-2022 15:19:39.460 SEVERE [http-nio-8080-exec-150] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/latihan_project_andri] threw exception [org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.jsp.about_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.about_jsp
+		at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:158)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:192)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:413)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:379)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:327)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:748)
