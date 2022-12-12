@@ -3,6 +3,11 @@
     Created on : Dec 6, 2022, 11:12:31 AM
     Author     : andri
 --%>
+<%
+    if (session.getAttribute("statusLogin") == null) {
+        response.sendRedirect("login.jsp");
+    }
+%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,10 +24,32 @@
 
         <h1>Admin</h1>
         <hr class="my-3">
-
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos similique corrupti obcaecati libero ipsam ea magni beatae, ab in harum vitae, animi architecto recusandae, quae quaerat sit temporibus at vero!</p>
-        
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, ratione doloribus, veritatis nesciunt libero a minima quidem, recusandae porro nisi, laboriosam fuga quisquam magnam facere beatae deserunt est blanditiis aliquam?</p>
+        <div class="row">
+            <div class="col-lg-5">
+                <table class="mx-auto table">
+                    <tr>
+                        <td><strong>Nama Lengkap</strong></td>
+                        <td>:</td>
+                        <td><strong>Andri Firman Saputra</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>NIM</strong></td>
+                        <td>:</td>
+                        <td><strong>201011402125</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kelas</strong></td>
+                        <td>:</td>
+                        <td><strong>05TPLP016</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email</strong></td>
+                        <td>:</td>
+                        <td><strong>andrifirmansaputra1@gmail.com</strong></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
         <!-- end content -->
 

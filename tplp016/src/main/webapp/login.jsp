@@ -22,6 +22,7 @@
                         String gagalLogin = session.getAttribute("gagalLogin").toString();
                         if (gagalLogin.equals("1")) {
                             notif = "<h3 class='notif-gagal'>Username dan Password tidak ditemukan!</h3>";
+                            session.removeAttribute("gagalLogin");
                         }
                     } catch (Exception e) {
                     }
