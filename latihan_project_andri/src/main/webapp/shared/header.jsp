@@ -94,4 +94,10 @@
         border-top-right-radius: 0;
     }
 
+    .img-profile {
+        width: 200px;
+        border-radius: 20px;
+        display: block;
+        margin: 0 auto;
+    }
 </style>

@@ -4,9 +4,13 @@
     Author     : andri
 --%>
 <%
+    String baseUrl = "";
     if (session.getAttribute("statusLogin") == null) {
         response.sendRedirect("login.jsp");
+    } else {
+        baseUrl = "http://localhost:8080/latihan_project_andri/";
     }
+
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -24,8 +28,12 @@
 
         <h1>Admin</h1>
         <hr class="my-3">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-lg-5">
+                <a href="<%= baseUrl%>/media/profile.jpg" target="_blank">
+                    <img class="img-profile" src="<%= baseUrl%>/media/profile.jpg" alt="Foto Profile"/>
+                </a>
+                <hr>
                 <table class="mx-auto table">
                     <tr>
                         <td><strong>Nama Lengkap</strong></td>
