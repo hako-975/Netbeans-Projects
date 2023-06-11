@@ -1,0 +1,47 @@
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.68
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 3 2022 19:06:10 UTC
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.68.0
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_221\jre
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_221-b11
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\Documents\NetBeansProjects\apache-tomcat-9.0.68
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\Documents\NetBeansProjects\apache-tomcat-9.0.68
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\conf\logging.properties
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|DESKTOP-ANDRI
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\Documents\NetBeansProjects\apache-tomcat-9.0.68
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\Documents\NetBeansProjects\apache-tomcat-9.0.68
+18-Oct-2022 13:59:39.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\temp
+18-Oct-2022 13:59:39.951 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Git\cmd;C:\Users\andri\AppData\Local\Microsoft\WindowsApps;C:\Users\andri\AppData\Local\GitHubDesktop\bin;;C:\Users\andri\AppData\Local\Programs\Microsoft VS Code\bin;.]
+18-Oct-2022 13:59:40.363 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+18-Oct-2022 13:59:40.403 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [732] milliseconds
+18-Oct-2022 13:59:40.467 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+18-Oct-2022 13:59:40.467 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.68]
+18-Oct-2022 13:59:40.483 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\webapps\docs]
+18-Oct-2022 13:59:41.187 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [192] milliseconds.
+18-Oct-2022 13:59:41.211 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\webapps\docs] has finished in [728] ms
+18-Oct-2022 13:59:41.211 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\webapps\examples]
+18-Oct-2022 13:59:41.905 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\webapps\examples] has finished in [694] ms
+18-Oct-2022 13:59:41.905 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\webapps\host-manager]
+18-Oct-2022 13:59:41.936 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\webapps\host-manager] has finished in [31] ms
+18-Oct-2022 13:59:41.936 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\webapps\manager]
+18-Oct-2022 13:59:41.999 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\webapps\manager] has finished in [63] ms
+18-Oct-2022 13:59:41.999 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\webapps\ROOT]
+18-Oct-2022 13:59:42.030 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\webapps\ROOT] has finished in [31] ms
+18-Oct-2022 13:59:42.046 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+18-Oct-2022 13:59:42.061 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1661] milliseconds
+18-Oct-2022 13:59:49.135 INFO [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\conf\Catalina\localhost\tplp016.xml]
+18-Oct-2022 13:59:49.135 WARNING [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tplp016] in deployment descriptor [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\conf\Catalina\localhost\tplp016.xml] has been ignored
+18-Oct-2022 13:59:49.213 INFO [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Documents\NetBeansProjects\apache-tomcat-9.0.68\conf\Catalina\localhost\tplp016.xml] has finished in [78] ms
+18-Oct-2022 13:59:49.229 INFO [http-nio-8080-exec-9] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/tplp016]] after start() had already been called. The second call will be ignored.
+18-Oct-2022 14:00:18.932 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+18-Oct-2022 14:00:18.932 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+18-Oct-2022 14:00:19.073 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+18-Oct-2022 14:00:19.099 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+18-Oct-2022 14:00:19.115 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
