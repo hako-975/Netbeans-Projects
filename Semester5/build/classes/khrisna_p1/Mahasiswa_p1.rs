@@ -1,2 +1,0 @@
-khrisna_p1.DataMHS
-khrisna_p1.Mahasiswa_p1
